@@ -1,0 +1,43 @@
+@import url('./../_global.sjs.css');
+
+.sjs-hero {
+    display: flex;
+    min-height: 500px;
+    align-items: center;
+    justify-content: center;
+}
+
+.sjs-hero .image {
+    width: 70%;
+    max-height: 400px;
+}
+
+.sjs-hero .details {
+    width: 30%;
+}
+
+.sjs-hero .details h2 {
+    text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+    .sjs-hero {
+        flex-direction: column;
+        min-height: 400px;
+    }
+
+    .sjs-hero .image {
+        width: 90%;
+    }
+
+    .sjs-hero .details {
+        width: 90%;
+        display: flex;
+        margin-top: var(--margin-step);
+    }
+
+    .sjs-hero .details h2 {
+        flex: 1 1 auto;
+        text-align: center;
+    }
+}

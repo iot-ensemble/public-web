@@ -1,0 +1,43 @@
+@import url('./../_global.sjs.css');
+
+.icon {
+    width: 32px;
+    height: 32px;
+    font-size: 32px;
+}
+
+.icon.xs {
+    width: 16px;
+    height: 16px;
+    font-size: 16px;
+}
+
+.icon.sm {
+    width: 24px;
+    height: 24px;
+    font-size: 24px;
+}
+
+.icon.md {
+    width: 48px;
+    height: 48px;
+    font-size: 48px;
+}
+
+.icon.lg {
+    width: 64px;
+    height: 64px;
+    font-size: 64px;
+}
+
+.icon.xl {
+    width: 96px;
+    height: 96px;
+    font-size: 96px;
+}
+
+.icon.xxl {
+    width: 128px;
+    height: 128px;
+    font-size: 128px;
+}
