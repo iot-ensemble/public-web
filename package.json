@@ -9,7 +9,7 @@
     "build:es": "tsc -p tsconfig.es.json",
     "build:cjs": "tsc -p tsconfig.cjs.json",
     "deploy": "npm version patch && npm run deploy:all",
-    "deploy:all": "rimraf packages && npm run build && npm publish ./packages --access public",
+    "deploy:all": "rimraf packages && npm run build && npm publish --access public",
     "test:coverage": "jest --coverage",
     "watch": "npm run watch:es",
     "watch:es": "tsc -p tsconfig.es.json -w",
