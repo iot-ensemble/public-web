@@ -36,11 +36,12 @@ export class ExpandSelect {
     constructor() {}
 
     //  API Methods
+    public Alert(msg: string): void {
+        alert(msg);
+    }
 
     //  Helpers
     protected mountToElement(el: HTMLElement): HTMLElement {
-        // el.style.background = 'green';
-        // alert('green');
 
         return el;
     }
