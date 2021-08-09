@@ -39,7 +39,7 @@
     "typescript": "^4.3.5"
   },
   "dependencies": {
-    "@semanticjs/common": "^0.0.16"
+    "@semanticjs/common": "^0.0.17"
   },
   "module": "./packages/es/common.js",
   "files": [
