@@ -157,6 +157,18 @@ header nav .trigger {
     background-color: var(--theme-black);
 }
 
+.memo .container .redacted:hover {
+    background-color: #11111173;
+}
+
+.partnerverse {
+    margin: calc(var(--margin-step) * 3);
+}
+
+.partnerverse img {
+    max-width: 100%;
+}
+
 @media (max-width: 768px) {
     .page .content .contain {
         max-width: 98%;
@@ -235,7 +247,7 @@ header nav .trigger {
     .partners .container .recipe-builder > * {
         margin: calc(var(--margin-step) / 2);
     }
-    
+
     .partners .container .recipe-builder .option img {
         height: 48px;
     }
@@ -252,6 +264,10 @@ header nav .trigger {
 
     .memo .container {
         width: 90%;
+    }
+
+    .partnerverse {
+        margin: var(--margin-step);
     }
 }
 
@@ -271,7 +287,7 @@ header nav .trigger {
     .partners .container .actions {
         flex-direction: column;
     }
-    
+
     .partners .container .recipe-builder .option img {
         height: 24px;
     }
@@ -281,5 +297,4 @@ header nav .trigger {
         height: 24px;
         font-size: 24px;
     }
-
 }

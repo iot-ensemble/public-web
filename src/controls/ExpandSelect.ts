@@ -36,7 +36,7 @@ export class ExpandSelect {
     constructor() {}
 
     //  API Methods
-    public Alert(msg: string): void {
+    public Expanded(msg: string): void {
         alert(msg);
     }
 
