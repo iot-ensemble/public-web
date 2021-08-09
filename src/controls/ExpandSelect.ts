@@ -36,13 +36,9 @@ export class ExpandSelect {
     constructor() {}
 
     //  API Methods
-    public Expanded(msg: string): void {
-        alert(msg);
-    }
 
     //  Helpers
     protected mountToElement(el: HTMLElement): HTMLElement {
-
         return el;
     }
 }
