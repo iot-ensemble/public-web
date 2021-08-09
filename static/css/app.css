@@ -141,6 +141,7 @@ header nav .trigger {
 
 .memo {
     color: var(--theme-black);
+    font-family: 'Black Ops One', cursive;
 }
 
 .memo .container {
@@ -157,7 +158,7 @@ header nav .trigger {
     background-color: var(--theme-black);
 }
 
-.memo .container .redacted:hover {
+.memo .container:hover .redacted {
     background-color: #11111173;
 }
 
