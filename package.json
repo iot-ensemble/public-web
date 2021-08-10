@@ -1,5 +1,5 @@
 {
-  "name": "@lowcodeunit/public-web",
+  "name": "@iot-ensemble/public-web",
   "version": "0.0.0",
   "description": "",
   "main": "./packages/cjs/common.js",
@@ -18,15 +18,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lowcodeunit/public-web.git"
+    "url": "git+https://github.com/iot-ensemble/public-web.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/lowcodeunit/public-web/issues"
+    "url": "https://github.com/iot-ensemble/public-web/issues"
   },
-  "homepage": "https://github.com/lowcodeunit/public-web#readme",
+  "homepage": "https://github.com/iot-ensemble/public-web#readme",
   "devDependencies": {
     "@types/jest": "^26.0.24",
     "@types/node": "^16.4.13",
