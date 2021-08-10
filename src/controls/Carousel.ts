@@ -224,11 +224,13 @@ export class Carousel {
 
       /**
        * Setting up initial values
+       * 
+       * Update old slide with new ones
        */
-      let newPrevious: number = this.slide - 1;
-      let newNext = this.slide + 1;
-      let oldPrevious: number = this.slide - 2;
-      let oldNext: number = this.slide + 2;
+      let newPrevious: number = this.slide - 1; // previous slide, from current slide
+      let newNext = this.slide + 1; // next slide, from current slide
+      // let oldPrevious: number = this.slide - 2;
+      // let oldNext: number = this.slide + 2;
 
       /**
        * Check if there's more than three items,
@@ -238,9 +240,9 @@ export class Carousel {
 
         if (newPrevious <= 0) {
 
-          oldPrevious = (this.totalItems - 1);
+          // oldPrevious = (this.totalItems - 1);
         } else if (newNext >= (this.totalItems - 1)) {
-          oldNext = 0;
+          // oldNext = 0;
         }
       }
 
@@ -251,14 +253,14 @@ export class Carousel {
       if (this.slide === 0) {
 
         newPrevious = (this.totalItems - 1);
-        oldPrevious = (this.totalItems - 2);
-        oldNext = (this.slide + 1);
+        // oldPrevious = (this.totalItems - 2);
+        // oldNext = (this.slide + 1);
 
       } else if (this.slide === (this.totalItems - 1)) {
 
         newPrevious = (this.slide - 1);
         newNext = 0;
-        oldNext = 1;
+        // oldNext = 1;
       }
 
       /**
@@ -268,8 +270,8 @@ export class Carousel {
       /**
        * Reset default classes
        */
-      this.items[oldPrevious].className = this.itemClassName;
-      this.items[oldNext].className = this.itemClassName;
+      // this.items[oldPrevious].className = this.itemClassName;
+      // this.items[oldNext].className = this.itemClassName;
 
       /**
        * Add new classes
