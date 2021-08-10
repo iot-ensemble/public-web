@@ -1,5 +1,9 @@
 @import url('./sjs/sjs.core.css');
 
+.testing {
+    background-color: green;
+}
+
 /*  Application Styles  */
 body {
     margin: 0;

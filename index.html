@@ -81,13 +81,13 @@
 
                         <div class="recipe-builder">
                             <div id="hardware" class="hardware">
-                                <!-- <div class="option">
+                                <div class="option">
                                     <img
                                         src="https://www.phoenixcontact.com/theme/img/logo.gif"
                                     />
-                                </div> -->
+                                </div>
                                 
-                                <!-- <div class="option">
+                                <div class="option">
                                     <img
                                         src="https://www.phoenixcontact.com/theme/img/logo.gif"
                                     />
@@ -103,13 +103,13 @@
                                     <img
                                         src="https://www.phoenixcontact.com/theme/img/logo.gif"
                                     />
-                                </div> -->
+                                </div>
                                 
-                                <!-- <div class="option">
+                                <div class="option">
                                     <img
                                         src="https://www.phoenixcontact.com/theme/img/logo.gif"
                                     />
-                                </div> -->
+                                </div>
                             </div>
 
                             <div class="plus">
@@ -131,11 +131,26 @@
                             </div>
 
                             <div id="software" class="software">
-                                <!-- <div class="option">
+                                <div class="option">
                                     <img
                                         src="./static/images/third-party/logos/Grafana.png"
                                     />
-                                </div> -->
+                                </div>
+                                <div class="option">
+                                    <img
+                                        src="./static/images/third-party/logos/Grafana.png"
+                                    />
+                                </div>
+                                <div class="option">
+                                    <img
+                                        src="./static/images/third-party/logos/Grafana.png"
+                                    />
+                                </div>
+                                <div class="option">
+                                    <img
+                                        src="./static/images/third-party/logos/Grafana.png"
+                                    />
+                                </div>
                             </div>
                         </div>
 
@@ -287,16 +302,16 @@
                 }
             ]
             
-            // import { ExpandSelect } from './packages/es/index.js';
+            import { ExpandSelect } from './packages/es/index.js';
             import { TesterTest } from './packages/es/index.js';
             const test = new TesterTest('From index.html');
             test.SoftHardwareList(document.getElementById('hardware'), HardwareList);
-            test.SoftHardwareList(document.getElementById('software'), SoftwareList);
+            // test.SoftHardwareList(document.getElementById('software'), SoftwareList);
 
-            // const expSlct = new ExpandSelect();
-            // expSlct.Expanded = true;
+            const expSlct = new ExpandSelect();
+            expSlct.Expanded = true;
 
-            // expSlct.Mount('.hardware');
+            expSlct.Mount('.software');
         </script>
     </body>
 </html>

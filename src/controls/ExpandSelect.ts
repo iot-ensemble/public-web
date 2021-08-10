@@ -1,63 +1,41 @@
 
-import { SJSElement } from '@semanticjs/common';
+// import { SJSElement } from '@semanticjs/common';
 
-export class Options {
-    public Id: string = '';
-    public Img: string = '';
-}
-
-export class ExpandSelect extends SJSElement {
+export class ExpandSelect { //extends SJSElement {
     //  Fields
+    protected mountedEl?: HTMLElement;
 
     //  Properties
     public Expanded?: boolean;
 
-    // public HardwareList?: Array<Options> ;
-    // public SoftwareList?: Array<Options>;
+    public Options?: Array<HTMLElement>;
+
+    public OptionSelector?: string;
 
     //  Constructors
     constructor() {
-        super();
+        // super();
 
-        // this.HardwareList = [
-        //     { 
-        //         Id: 'PhoenixContact', 
-        //         Img: 'https://www.phoenixcontact.com/theme/img/logo.gif' }
-        // ]
+        this.Options = [];
 
-        // this.SoftwareList = [
-        //     {
-        //         Id: 'Grafana', 
-        //         Img: './static/images/third-party/logos/Grafana.png'}
-        // ]
-
-        this.setupHardwareList();
+        this.OptionSelector = '.option';
     }
 
     //  API Methods
+    public Mount(selector: string | HTMLElement): void {
+        if (typeof selector === 'string') {
+            selector = <HTMLElement>document.querySelector(<string>selector);
+        }
+
+        this.mountedEl = this.mountToElement(<HTMLElement>selector);
+    }
 
     //  Helpers
     protected mountToElement(el: HTMLElement): HTMLElement {
+        const optionElements = el.querySelectorAll(<string>this.OptionSelector);
         
+        optionElements.forEach(oe => oe.classList.add('testing'));
+
         return el;
-    }
-
-    protected setupHardwareList(): void {
-        // debugger;
-        // const el: any = document.getElementById('hardware');
-        // // const div: HTMLElement = document.createElement('div');
-        // if (this.HardwareList) {
-        //     for (let hardware of this.HardwareList) {
-               
-        //         const option: HTMLElement = document.createElement('div'); const div: HTMLElement = document.createElement('div');
-        //         const img: any = document.createElement('img');
-
-        //         option.classList.add('option');
-        //         img.src = hardware.Img;
-        //         option.appendChild(img);
-        //         option.appendChild(img);
-        //         el.appendChild(option);
-        //     }
-        // }
     }
 }
