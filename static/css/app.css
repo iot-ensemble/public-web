@@ -124,6 +124,12 @@ header nav .trigger {
     height: 64px;
 }
 
+.partners .container .recipe-builder .sjs-expand-select.open {
+    background-color: var(--theme-black);
+    box-shadow: var(--box-shadow);
+    margin: var(--margin-step);
+}
+
 .partners .container .actions {
     display: flex;
     align-items: center;
