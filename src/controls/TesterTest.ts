@@ -41,3 +41,53 @@ export class TesterTest {
         }
     }
 }
+
+
+
+
+// const HardwareList = [
+//     { 
+//         Id: 'PhoenixContact 0', 
+//         Img: 'https://www.phoenixcontact.com/theme/img/logo.gif' 
+//     },
+//     { 
+//         Id: 'PhoenixContact 1', 
+//         Img: 'https://www.phoenixcontact.com/theme/img/logo.gif' 
+//     },
+//     { 
+//         Id: 'PhoenixContact 2', 
+//         Img: 'https://www.phoenixcontact.com/theme/img/logo.gif' 
+//     },
+//     { 
+//         Id: 'PhoenixContact 3', 
+//         Img: 'https://www.phoenixcontact.com/theme/img/logo.gif' 
+//     },
+//     { 
+//         Id: 'PhoenixContact 4', 
+//         Img: 'https://www.phoenixcontact.com/theme/img/logo.gif' 
+//     }
+// ]
+
+// const SoftwareList = [
+
+//     {
+//         Id: 'Grafana 0', 
+//         Img: './static/images/third-party/logos/Grafana.png'
+//     },
+//     {
+//         Id: 'Grafana 1', 
+//         Img: './static/images/third-party/logos/Grafana.png'
+//     },
+//     {
+//         Id: 'Grafana 2', 
+//         Img: './static/images/third-party/logos/Grafana.png'
+//     },
+//     {
+//         Id: 'Grafana 3', 
+//         Img: './static/images/third-party/logos/Grafana.png'
+//     },
+//     {
+//         Id: 'Grafana 4', 
+//         Img: './static/images/third-party/logos/Grafana.png'
+//     }
+// ]
