@@ -1,4 +1,5 @@
 export class Carousel {
+  
   //  Fields
   protected mountedEl?: HTMLElement;
 
@@ -157,8 +158,8 @@ export class Carousel {
     const next: Element = document.getElementsByClassName('carousel__button--next')[0];
     const prev: Element = document.getElementsByClassName('carousel__button--prev')[0];
 
-    next.addEventListener('click', this.moveNext);
-    prev.addEventListener('click', this.movePrev);
+    next.addEventListener('click', this.moveNext.bind(this));
+    prev.addEventListener('click', this.movePrev.bind(this));
   }
 
   /**
@@ -210,7 +211,7 @@ export class Carousel {
    * @param slide position to move to
    */
   protected moveCarouselTo(slide: number): void {
-    
+
     /**
      * If carousel isn't isMoving, then allow interaction
      */
