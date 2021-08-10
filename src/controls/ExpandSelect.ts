@@ -8,8 +8,6 @@ export class ExpandSelect {
     //  Properties
     public ClosedClass: string;
 
-    public Expanded?: boolean;
-
     public IsOpen: boolean;
 
     public OpenClass: string;
