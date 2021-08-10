@@ -28,34 +28,36 @@
   z-index: 800;
 }
 
+/* Move item down */
 .carousel-image.prev {
-  transform: translateY(-100%); /* Move 'prev' item to the left */
+  transform: translateY(-100%); 
 }
 
+/* Move item up */
 .carousel-image.next {
-  transform: translateY(100%); /* Move 'next' item to the right */
+  transform: translateY(100%);
 }
 
 .carousel-button-prev,
 .carousel-button-next {
   position: absolute;
-  left: 50%;
+  left: calc(50% - 1.5rem / 2);
   width: 1.5rem;
   height: 1.5rem;
-  background-color: #FFF;
-  transform: translateY(-50%);
+  background-color: #fff;
+  /* transform: translateY(-50%); */
   border-radius: 50%;
   cursor: pointer; 
-  z-index: 1001; /* Sit on top of everything */
+  z-index: 1001; 
   border: 1px solid black;
 }
 
 .carousel-button-prev {
-  top:20px;
+  top:-35px;
 }
 
 .carousel-button-next {
-  bottom:0;
+  bottom:-30px;
 }
 
 .carousel-button-prev::after,

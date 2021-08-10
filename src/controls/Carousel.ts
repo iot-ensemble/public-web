@@ -159,7 +159,7 @@ export class Carousel {
     const prev: Element = document.getElementsByClassName('carousel-button-prev')[0];
 
     next.addEventListener('click', this.moveNext.bind(this));
-    prev.addEventListener('click', this.movePrev.bind);
+    prev.addEventListener('click', this.movePrev.bind(this));
   }
 
   /**
