@@ -4,6 +4,7 @@
         <!-- HTML Setup -->
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <base href="/" />
 
         <!-- SEO Setup -->
         <title></title>
@@ -23,7 +24,6 @@
         <script type="module" src="./packages/es/index.js"></script>
     </head>
     <body>
-        
         <div class="page">
             <header>
                 <img class="logo" src="./static/images/logo.svg" alt="Fathym" />
@@ -125,25 +125,25 @@
                                         src="https://www.phoenixcontact.com/theme/img/logo.gif"
                                     />
                                 </div>
-                                
+
                                 <div class="option">
                                     <img
                                         src="https://www.phoenixcontact.com/theme/img/logo.gif"
                                     />
                                 </div>
-                                
+
                                 <div class="option">
                                     <img
                                         src="https://www.phoenixcontact.com/theme/img/logo.gif"
                                     />
                                 </div>
-                                
+
                                 <div class="option">
                                     <img
                                         src="https://www.phoenixcontact.com/theme/img/logo.gif"
                                     />
                                 </div>
-                                
+
                                 <div class="option">
                                     <img
                                         src="https://www.phoenixcontact.com/theme/img/logo.gif"
@@ -305,12 +305,70 @@
 
         <!-- Recipes -->
         <script id="sjs-startup" type="module">
+<<<<<<< HEAD
+=======
+            const HardwareList = [
+                {
+                    Id: 'PhoenixContact 0',
+                    Img: 'https://www.phoenixcontact.com/theme/img/logo.gif',
+                },
+                {
+                    Id: 'PhoenixContact 1',
+                    Img: 'https://www.phoenixcontact.com/theme/img/logo.gif',
+                },
+                {
+                    Id: 'PhoenixContact 2',
+                    Img: 'https://www.phoenixcontact.com/theme/img/logo.gif',
+                },
+                {
+                    Id: 'PhoenixContact 3',
+                    Img: 'https://www.phoenixcontact.com/theme/img/logo.gif',
+                },
+                {
+                    Id: 'PhoenixContact 4',
+                    Img: 'https://www.phoenixcontact.com/theme/img/logo.gif',
+                },
+            ];
+
+            const SoftwareList = [
+                {
+                    Id: 'Grafana 0',
+                    Img: './static/images/third-party/logos/Grafana.png',
+                },
+                {
+                    Id: 'Grafana 1',
+                    Img: './static/images/third-party/logos/Grafana.png',
+                },
+                {
+                    Id: 'Grafana 2',
+                    Img: './static/images/third-party/logos/Grafana.png',
+                },
+                {
+                    Id: 'Grafana 3',
+                    Img: './static/images/third-party/logos/Grafana.png',
+                },
+                {
+                    Id: 'Grafana 4',
+                    Img: './static/images/third-party/logos/Grafana.png',
+                },
+            ];
+>>>>>>> e5bcb4a7abb5a4b5b3b3010c8657e399e5ae7305
 
             import { ExpandSelect } from './packages/es/index.js';
 
+<<<<<<< HEAD
             const expSlct = new ExpandSelect();
+=======
+            // const hwExpSlct = new ExpandSelect();
+            // hwExpSlct.Expanded = true;
 
-            expSlct.Mount('.software');
+            // hwExpSlct.Mount('.hardware');
+
+            const swExpSlct = new ExpandSelect();
+            swExpSlct.Expanded = true;
+>>>>>>> e5bcb4a7abb5a4b5b3b3010c8657e399e5ae7305
+
+            swExpSlct.Mount('.software');
         </script>
 
 
