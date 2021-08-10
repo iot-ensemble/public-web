@@ -6,7 +6,7 @@
     transform-style: preserve-3d;
 }
 
-.carousel__photo {
+.carousel-image {
     opacity: 0;
     position: absolute;
     top: 0;
@@ -16,28 +16,28 @@
     transition: transform 0.5s, opacity 0.5s, z-index 0.5s;
 }
 
-.carousel__photo.initial,
-.carousel__photo.active {
+.carousel-image.initial,
+.carousel-image.active {
     opacity: 1;
     position: relative;
     z-index: 900;
 }
 
-.carousel__photo.prev,
-.carousel__photo.next {
+.carousel-image.prev,
+.carousel-image.next {
   z-index: 800;
 }
 
-.carousel__photo.prev {
+.carousel-image.prev {
   transform: translateY(-100%); /* Move 'prev' item to the left */
 }
 
-.carousel__photo.next {
+.carousel-image.next {
   transform: translateY(100%); /* Move 'next' item to the right */
 }
 
-.carousel__button--prev,
-.carousel__button--next {
+.carousel-button-prev,
+.carousel-button-next {
   position: absolute;
   left: 50%;
   width: 1.5rem;
@@ -50,16 +50,16 @@
   border: 1px solid black;
 }
 
-.carousel__button--prev {
+.carousel-button-prev {
   top:20px;
 }
 
-.carousel__button--next {
+.carousel-button-next {
   bottom:0;
 }
 
-.carousel__button--prev::after,
-.carousel__button--next::after {
+.carousel-button-prev::after,
+.carousel-button-next::after {
   content: " ";
   position: absolute;
   width: 5px;
@@ -71,6 +71,6 @@
   transform: translate(-50%, -50%) rotate(225deg);
 }
 
-.carousel__button--next::after {
+.carousel-button-next::after {
   transform: translate(-50%, -50%) rotate(-320deg);
 }

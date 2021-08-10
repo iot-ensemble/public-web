@@ -39,7 +39,7 @@ export class Carousel {
   //  Constructors
   constructor() {
   
-    this.itemClassName = 'carousel__photo';
+    this.itemClassName = 'carousel-image';
 
     this.items = document.getElementsByClassName(this.itemClassName);
 
@@ -155,11 +155,11 @@ export class Carousel {
    */
   protected setEventListeners(): void {
 
-    const next: Element = document.getElementsByClassName('carousel__button--next')[0];
-    const prev: Element = document.getElementsByClassName('carousel__button--prev')[0];
+    const next: Element = document.getElementsByClassName('carousel-button-next')[0];
+    const prev: Element = document.getElementsByClassName('carousel-button-prev')[0];
 
     next.addEventListener('click', this.moveNext.bind(this));
-    prev.addEventListener('click', this.movePrev.bind(this));
+    prev.addEventListener('click', this.movePrev.bind);
   }
 
   /**
