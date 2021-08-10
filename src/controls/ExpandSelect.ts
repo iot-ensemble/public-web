@@ -6,13 +6,19 @@ export class ExpandSelect {
     protected mountedEl?: HTMLElement;
 
     //  Properties
+    public ClosedClass: string;
+
     public Expanded?: boolean;
 
     public IsOpen: boolean;
 
+    public OpenClass: string;
+
     public Options: Array<HTMLElement>;
 
     public OptionSelector?: string;
+
+    public SelectedClass: string;
 
     public SelectedIndex: number;
 
@@ -20,11 +26,17 @@ export class ExpandSelect {
     constructor() {
         // super();
 
+        this.ClosedClass = 'closed';
+
         this.IsOpen = false;
+
+        this.OpenClass = 'open';
 
         this.Options = [];
 
         this.OptionSelector = '.option';
+
+        this.SelectedClass = 'selected';
 
         this.SelectedIndex = 0;
     }
@@ -55,6 +67,8 @@ export class ExpandSelect {
 
         this.setupActiveElements(el);
 
+        el.classList.add('sjs-expand-select');
+
         return el;
     }
 
@@ -62,6 +76,8 @@ export class ExpandSelect {
         const workingEl = el || this.mountedEl;
 
         Array.from(<HTMLCollection>workingEl?.children).forEach((child) => {
+            child.classList.remove(this.SelectedClass);
+            
             workingEl?.removeChild(child);
         });
     }
@@ -100,7 +116,13 @@ export class ExpandSelect {
         } else {
             this.IsOpen = false;
 
+            this.Options[this.SelectedIndex].classList.add(this.SelectedClass);
+
             workingEl?.appendChild(this.Options[this.SelectedIndex]);
         }
+
+        workingEl?.classList.remove(!this.IsOpen ? this.OpenClass : this.ClosedClass);
+
+        workingEl?.classList.add(this.IsOpen ? this.OpenClass : this.ClosedClass);
     }
 }
