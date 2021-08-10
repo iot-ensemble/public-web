@@ -23,7 +23,6 @@
         <script type="module" src="./packages/es/index.js"></script>
     </head>
     <body>
-        
         <div class="page">
             <header>
                 <img class="logo" src="./static/images/logo.svg" alt="Fathym" />
@@ -86,25 +85,25 @@
                                         src="https://www.phoenixcontact.com/theme/img/logo.gif"
                                     />
                                 </div>
-                                
+
                                 <div class="option">
                                     <img
                                         src="https://www.phoenixcontact.com/theme/img/logo.gif"
                                     />
                                 </div>
-                                
+
                                 <div class="option">
                                     <img
                                         src="https://www.phoenixcontact.com/theme/img/logo.gif"
                                     />
                                 </div>
-                                
+
                                 <div class="option">
                                     <img
                                         src="https://www.phoenixcontact.com/theme/img/logo.gif"
                                     />
                                 </div>
-                                
+
                                 <div class="option">
                                     <img
                                         src="https://www.phoenixcontact.com/theme/img/logo.gif"
@@ -254,64 +253,67 @@
         </div>
 
         <script id="sjs-startup" type="module">
-
             const HardwareList = [
-                { 
-                    Id: 'PhoenixContact 0', 
-                    Img: 'https://www.phoenixcontact.com/theme/img/logo.gif' 
+                {
+                    Id: 'PhoenixContact 0',
+                    Img: 'https://www.phoenixcontact.com/theme/img/logo.gif',
                 },
-                { 
-                    Id: 'PhoenixContact 1', 
-                    Img: 'https://www.phoenixcontact.com/theme/img/logo.gif' 
+                {
+                    Id: 'PhoenixContact 1',
+                    Img: 'https://www.phoenixcontact.com/theme/img/logo.gif',
                 },
-                { 
-                    Id: 'PhoenixContact 2', 
-                    Img: 'https://www.phoenixcontact.com/theme/img/logo.gif' 
+                {
+                    Id: 'PhoenixContact 2',
+                    Img: 'https://www.phoenixcontact.com/theme/img/logo.gif',
                 },
-                { 
-                    Id: 'PhoenixContact 3', 
-                    Img: 'https://www.phoenixcontact.com/theme/img/logo.gif' 
+                {
+                    Id: 'PhoenixContact 3',
+                    Img: 'https://www.phoenixcontact.com/theme/img/logo.gif',
                 },
-                { 
-                    Id: 'PhoenixContact 4', 
-                    Img: 'https://www.phoenixcontact.com/theme/img/logo.gif' 
-                }
-            ]
+                {
+                    Id: 'PhoenixContact 4',
+                    Img: 'https://www.phoenixcontact.com/theme/img/logo.gif',
+                },
+            ];
 
             const SoftwareList = [
+                {
+                    Id: 'Grafana 0',
+                    Img: './static/images/third-party/logos/Grafana.png',
+                },
+                {
+                    Id: 'Grafana 1',
+                    Img: './static/images/third-party/logos/Grafana.png',
+                },
+                {
+                    Id: 'Grafana 2',
+                    Img: './static/images/third-party/logos/Grafana.png',
+                },
+                {
+                    Id: 'Grafana 3',
+                    Img: './static/images/third-party/logos/Grafana.png',
+                },
+                {
+                    Id: 'Grafana 4',
+                    Img: './static/images/third-party/logos/Grafana.png',
+                },
+            ];
 
-                {
-                    Id: 'Grafana 0', 
-                    Img: './static/images/third-party/logos/Grafana.png'
-                },
-                {
-                    Id: 'Grafana 1', 
-                    Img: './static/images/third-party/logos/Grafana.png'
-                },
-                {
-                    Id: 'Grafana 2', 
-                    Img: './static/images/third-party/logos/Grafana.png'
-                },
-                {
-                    Id: 'Grafana 3', 
-                    Img: './static/images/third-party/logos/Grafana.png'
-                },
-                {
-                    Id: 'Grafana 4', 
-                    Img: './static/images/third-party/logos/Grafana.png'
-                }
-            ]
-            
             import { ExpandSelect } from './packages/es/index.js';
             import { TesterTest } from './packages/es/index.js';
             const test = new TesterTest('From index.html');
             test.SoftHardwareList(document.getElementById('hardware'), HardwareList);
             // test.SoftHardwareList(document.getElementById('software'), SoftwareList);
 
-            const expSlct = new ExpandSelect();
-            expSlct.Expanded = true;
+            // const hwExpSlct = new ExpandSelect();
+            // hwExpSlct.Expanded = true;
 
-            expSlct.Mount('.software');
+            // hwExpSlct.Mount('.hardware');
+
+            const swExpSlct = new ExpandSelect();
+            swExpSlct.Expanded = true;
+
+            swExpSlct.Mount('.software');
         </script>
     </body>
 </html>
