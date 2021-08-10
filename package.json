@@ -45,6 +45,7 @@
   "files": [
     "data/",
     "packages/",
-    "static/"
+    "static/",
+    "index.html"
   ]
 }
