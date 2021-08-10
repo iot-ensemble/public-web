@@ -8,6 +8,8 @@ export class ExpandSelect {
     //  Properties
     public Expanded?: boolean;
 
+    public IsOpen: boolean;
+
     public Options: Array<HTMLElement>;
 
     public OptionSelector?: string;
@@ -17,6 +19,8 @@ export class ExpandSelect {
     //  Constructors
     constructor() {
         // super();
+
+        this.IsOpen = false;
 
         this.Options = [];
 
@@ -38,22 +42,18 @@ export class ExpandSelect {
     public SetSelectedIndex(index: number | HTMLElement): void {
         if (index instanceof HTMLElement) {
             index = this.Options.indexOf(index);
-            debugger;
         }
 
         this.SelectedIndex = index;
-        debugger;
 
-        this.setupActiveElement();
+        this.setupActiveElements();
     }
 
     //  Helpers
     protected mountToElement(el: HTMLElement): HTMLElement {
         this.setupOptions(el);
 
-        this.setupActiveElement(el);
-
-        this.setupActiveElement(el);
+        this.setupActiveElements(el);
 
         return el;
     }
@@ -61,8 +61,8 @@ export class ExpandSelect {
     protected removeAllChildren(el?: HTMLElement): void {
         const workingEl = el || this.mountedEl;
 
-        workingEl?.childNodes?.forEach((cn) => {
-            workingEl?.removeChild(cn);
+        Array.from(<HTMLCollection>workingEl?.children).forEach((child) => {
+            workingEl?.removeChild(child);
         });
     }
 
@@ -84,11 +84,23 @@ export class ExpandSelect {
         });
     }
 
-    protected setupActiveElement(el?: HTMLElement): void {
+    protected setupActiveElements(el?: HTMLElement): void {
         const workingEl = el || this.mountedEl;
+
+        const containsActive = workingEl?.children.length === 1;
 
         this.removeAllChildren(workingEl);
 
-        workingEl?.appendChild(this.Options[this.SelectedIndex]);
+        if (containsActive) {
+            this.IsOpen = true;
+            
+            this.Options.forEach(option => {
+                workingEl?.appendChild(option);
+            });
+        } else {
+            this.IsOpen = false;
+
+            workingEl?.appendChild(this.Options[this.SelectedIndex]);
+        }
     }
 }
