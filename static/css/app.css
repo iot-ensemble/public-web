@@ -344,14 +344,6 @@ footer {
         width: 90%;
     }
 
-    .memo .container .redacted {
-        background-color: #11111192;
-    }
-/* 
-    .memo .container:hover .redacted {
-        background-color: #11111160;
-    }
-     */
     .partnerverse {
         margin: var(--margin-step);
     }
