@@ -24,6 +24,18 @@
         <script type="module" src="./packages/es/index.js"></script>
     </head>
     <body>
+
+
+        <!-- <div id='root' style="height: 200px; width: 300px; background-color: cadetblue;"></div>
+        <script id="sjs-load-test" type="module">
+            import { ComponentTest } from './packages/es/index.js';
+            const componentTest = new ComponentTest();
+
+            componentTest.ComponentTemplate(document.getElementById('root'));
+        </script> -->
+
+
+
         <div class="page">
             <header>
                 <img class="logo" src="./static/images/logo.svg" alt="Fathym" />
@@ -81,7 +93,57 @@
 
                         <div class="recipe-builder">
                             <div id="hardware" class="hardware">
-                                <div class="option sjs-carousel-item">
+
+                                <!-- Use a module or JS to build out a template - user defined -->
+                                <script id="sjs-carousel" type="module">
+                                    import { ComponentTest } from './packages/es/index.js';
+                                    const componentTest = new ComponentTest();
+                                    const el = document.getElementById('hardware');
+
+                                    el.innerHTML += componentTest.ComponentAsString();
+
+                                    // import { CarouselTemplate } from './packages/es/index.js';
+                        
+                                    // const classList = ['option', 'sjs-carousel-item'];
+                                    // const hardware =  [
+                                    //     {
+                                    //         ClassList: classList,
+                                    //         Id: '0',
+                                    //         Img: './static/images/third-party/logos/Phoenixcontact.png',
+                                    //     },
+                                    //     {
+                                    //         ClassList: classList,
+                                    //         Id: '1',
+                                    //         Img: './static/images/third-party/logos/Advantech.png',
+                                    //     },
+                                    //     {
+                                    //         ClassList: classList,
+                                    //         Id: '2',
+                                    //         Img: './static/images/third-party/logos/MicroeLong.png',
+                                    //     },
+                                    //     {
+                                    //         ClassList: classList,
+                                    //         Id: '3',
+                                    //         Img: './static/images/third-party/logos/Inductiveautomation.png',
+                                    //     },
+                                    //     {
+                                    //         ClassList: classList,
+                                    //         Id: '4',
+                                    //         Img: './static/images/third-party/logos/Raspberry-Pi.png',
+                                    //     }
+                                    // ];
+                                    
+                                    // const hardwareTemplate = new CarouselTemplate( 
+                                    //     classList,
+                                    //     hardware
+                                    // );
+
+                                    // hardwareTemplate.Render(el);
+
+                                </script>
+
+
+                                <!-- <div class="option sjs-carousel-item">
                                     <img
                                         src="./static/images/third-party/logos/Phoenixcontact.png"
                                     />
@@ -109,7 +171,7 @@
                                     <img
                                         src="./static/images/third-party/logos/Raspberry-Pi.png"
                                     />
-                                </div>
+                                </div> -->
 
                                 <div class="sjs-carousel-button-next"></div>
 
