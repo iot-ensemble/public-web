@@ -33,8 +33,8 @@ body {
 }
 
 .page section {
-    margin-top: calc(var(--margin-step) * 8);
-    margin-bottom: calc(var(--margin-step) * 8);
+    margin-top: calc(var(--margin-step) * 4);
+    margin-bottom: calc(var(--margin-step) * 4);
 }
 
 header {
