@@ -28,6 +28,15 @@ body {
     margin: auto;
 }
 
+.page .content {
+    overflow: auto;
+}
+
+.page section {
+    margin-top: calc(var(--margin-step) * 8);
+    margin-bottom: calc(var(--margin-step) * 8);
+}
+
 header {
     height: 60px;
     display: flex;
@@ -171,6 +180,7 @@ header nav .trigger {
 }
 
 .memo .container .redacted {
+    color: var(--theme-black);
     background-color: var(--theme-black);
 }
 
@@ -179,11 +189,19 @@ header nav .trigger {
 }
 
 .partnerverse {
-    margin: calc(var(--margin-step) * 3);
+    margin: calc(var(--margin-step) * 5);
 }
 
 .partnerverse img {
     max-width: 100%;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: calc(var(--margin-step) * 5);
 }
 
 @media (max-width: 768px) {

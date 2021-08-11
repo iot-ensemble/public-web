@@ -2,11 +2,11 @@
     overflow: hidden;
 }
 
-.carousel {
+.sjs-carousel {
     transform-style: preserve-3d;
 }
 
-.carousel-image {
+.sjs-carousel-item {
     opacity: 0;
     position: absolute;
     top: 0;
@@ -16,30 +16,30 @@
     transition: transform 0.5s, opacity 0.5s, z-index 0.5s;
 }
 
-.carousel-image.initial,
-.carousel-image.active {
+.sjs-carousel-item.initial,
+.sjs-carousel-item.active {
     opacity: 1;
     position: relative;
     z-index: 900;
 }
 
-.carousel-image.prev,
-.carousel-image.next {
+.sjs-carousel-item.prev,
+.sjs-carousel-item.next {
   z-index: 800;
 }
 
 /* Move item down */
-.carousel-image.prev {
+.sjs-carousel-item.prev {
   transform: translateY(-100%); 
 }
 
 /* Move item up */
-.carousel-image.next {
+.sjs-carousel-item.next {
   transform: translateY(100%);
 }
 
-.carousel-button-prev,
-.carousel-button-next {
+.sjs-carousel-button-prev,
+.sjs-carousel-button-next {
   position: absolute;
   left: calc(50% - 1.5rem / 2);
   width: 1.5rem;
@@ -52,16 +52,16 @@
   border: 1px solid black;
 }
 
-.carousel-button-prev {
+.sjs-carousel-button-prev {
   top:-35px;
 }
 
-.carousel-button-next {
+.sjs-carousel-button-next {
   bottom:-30px;
 }
 
-.carousel-button-prev::after,
-.carousel-button-next::after {
+.sjs-carousel-button-prev::after,
+.sjs-carousel-button-next::after {
   content: " ";
   position: absolute;
   width: 5px;
@@ -73,6 +73,6 @@
   transform: translate(-50%, -50%) rotate(225deg);
 }
 
-.carousel-button-next::after {
+.sjs-carousel-button-next::after {
   transform: translate(-50%, -50%) rotate(-320deg);
 }

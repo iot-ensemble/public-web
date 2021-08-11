@@ -84,27 +84,18 @@
                             <div 
                                 id="carousel" 
                                 class="carousel">
-                                <img class="option carousel-image initial" src="https://www.phoenixcontact.com/theme/img/logo.gif">
-                                <img class="option carousel-image" src="https://www.phoenixcontact.com/theme/img/logo.gif">
-                                <img class="option carousel-image" src="https://www.phoenixcontact.com/theme/img/logo.gif">
-                                <img class="option carousel-image" src="https://www.phoenixcontact.com/theme/img/logo.gif">
-                                <img class="option carousel-image" src="https://www.phoenixcontact.com/theme/img/logo.gif">
+                                <img class="option carousel-item initial" src="https://www.phoenixcontact.com/theme/img/logo.gif">
+                                <img class="option carousel-item" src="https://www.phoenixcontact.com/theme/img/logo.gif">
+                                <img class="option carousel-item" src="https://www.phoenixcontact.com/theme/img/logo.gif">
+                                <img class="option carousel-item" src="https://www.phoenixcontact.com/theme/img/logo.gif">
+                                <img class="option carousel-item" src="https://www.phoenixcontact.com/theme/img/logo.gif">
                                 
-                                <div class="carousel-button-next"></div>
-                                <div class="carousel-button-prev"></div>
+                                <div class="sjs-carousel-button-next"></div>
+                                <div class="sjs-carousel-button-prev"></div>
                             </div>
                         </div>
                     </div>
                 </section> -->
-
-
-
-
-
-
-
-
-
 
                 <section class="partners">
                     <div class="container">
@@ -112,49 +103,39 @@
 
                         <div class="recipe-builder">
                             <div id="hardware" class="hardware">
-                                <!-- <div class="option">
+                                <div class="option sjs-carousel-item">
                                     <img
-                                        src="https://www.phoenixcontact.com/theme/img/logo.gif"
+                                        src="./static/images/third-party/logos/Phoenixcontact.png"
                                     />
                                 </div>
 
-                                <div class="option">
+                                <div class="option sjs-carousel-item">
                                     <img
-                                        src="https://www.phoenixcontact.com/theme/img/logo.gif"
+                                        src="./static/images/third-party/logos/Advantech.png"
                                     />
                                 </div>
 
-                                <div class="option">
+                                <div class="option sjs-carousel-item">
                                     <img
-                                        src="https://www.phoenixcontact.com/theme/img/logo.gif"
+                                        src="./static/images/third-party/logos/MicroeLong.png"
                                     />
                                 </div>
 
-                                <div class="option">
+                                <div class="option sjs-carousel-item">
                                     <img
-                                        src="https://www.phoenixcontact.com/theme/img/logo.gif"
+                                        src="./static/images/third-party/logos/Inductiveautomation.png"
                                     />
                                 </div>
 
-                                <div class="option">
+                                <div class="option sjs-carousel-item">
                                     <img
-                                        src="https://www.phoenixcontact.com/theme/img/logo.gif"
+                                        src="./static/images/third-party/logos/Raspberry-Pi.png"
                                     />
-                                </div> -->
-                                <!-- <section 
-                                class="partners"> -->
-                                    <div class="recipe-builder">
-                                        <div class="carousel">
-                                            <img class="option carousel-image initial" src="./static/images/third-party/logos/Phoenixcontact.png">
-                                            <img class="option carousel-image" src="./static/images/third-party/logos/Advantech.png">
-                                            <img class="option carousel-image" src="./static/images/third-party/logos/MicroeLong.png">
-                                            <img class="option carousel-image" src="./static/images/third-party/logos/Inductiveautomation.png">
-                                            
-                                            <div class="carousel-button-next"></div>
-                                            <div class="carousel-button-prev"></div>
-                                        </div>
-                                    </div>
-                            <!-- </section> -->
+                                </div>
+
+                                <div class="sjs-carousel-button-next"></div>
+
+                                <div class="sjs-carousel-button-prev"></div>
                             </div>
 
                             <div class="plus">
@@ -176,26 +157,39 @@
                             </div>
 
                             <div id="software" class="software">
-                                <div class="option">
+                                <div class="option sjs-carousel-item">
                                     <img
                                         src="./static/images/third-party/logos/Grafana.png"
                                     />
                                 </div>
-                                <div class="option">
+
+                                <div class="option sjs-carousel-item">
                                     <img
                                         src="./static/images/third-party/logos/Powerbi.png"
                                     />
                                 </div>
-                                <div class="option">
+
+                                <div class="option sjs-carousel-item">
                                     <img
                                         src="./static/images/third-party/logos/IFTTT.png"
                                     />
                                 </div>
-                                <div class="option">
+
+                                <div class="option sjs-carousel-item">
                                     <img
                                         src="./static/images/third-party/logos/MSsql.png"
                                     />
                                 </div>
+
+                                <div class="option sjs-carousel-item">
+                                    <img
+                                        src="./static/images/third-party/logos/Tableau.png"
+                                    />
+                                </div>
+
+                                <div class="sjs-carousel-button-next"></div>
+
+                                <div class="sjs-carousel-button-prev"></div>
                             </div>
                         </div>
 
@@ -295,18 +289,29 @@
                 </section>
             </div>
 
-            <footer></footer>
+            <footer>
+                <div class="footer-container">
+                    <div class="copyright">
+                        <div class="container">
+                            Copyright © 2021
+                            <span class="redacted">Fathym, Inc</span>
+                        </div>
+                    </div>
+                </div>
+            </footer>
         </div>
 
         <!-- Carousel -->
         <script id="sjs-carousel" type="module">
-
             import { Carousel } from './packages/es/index.js';
 
-            const carousel = new Carousel();
-            carousel.InitCarousel();
-            // carousel.Mount('.carousel');
+            const hwCarousel = new Carousel();
 
+            hwCarousel.Mount('.hardware');
+            
+            const swCarousel = new Carousel();
+
+            swCarousel.Mount('.software');
         </script>
 
         <!-- Recipes -->
@@ -364,13 +369,10 @@
 
             // hwExpSlct.Mount('.hardware');
 
-            const swExpSlct = new ExpandSelect();
-            swExpSlct.Expanded = true;
+            // const swExpSlct = new ExpandSelect();
+            // swExpSlct.Expanded = true;
 
-            swExpSlct.Mount('.software');
+            // swExpSlct.Mount('.software');
         </script>
-
-
-
     </body>
 </html>
