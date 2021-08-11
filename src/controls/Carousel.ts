@@ -151,7 +151,7 @@ export class Carousel {
      * Previous navigation
      */
     protected movePrev(): void {
-        this.SetSlide(this.NextSlide);
+        this.SetSlide(this.PreviousSlide);
     }
 
     /**
@@ -191,6 +191,10 @@ export class Carousel {
         this.items[this.Slide].classList.add('active');
 
         this.items[this.NextSlide].classList.add('next');
+
+        console.log(this.PreviousSlide);
+        console.log(this.Slide);
+        console.log(this.NextSlide);
     }
 
     /**
