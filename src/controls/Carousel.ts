@@ -166,6 +166,23 @@ export class Carousel {
     }
 
     /**
+     * Setup child elements
+     */
+    protected setupChildElements(el?: HTMLElement): void {
+        const workingEl = <HTMLElement>el || this.mountedEl;
+
+        this.items = Array.from(workingEl.querySelectorAll(`.${this.ItemClassName}`));
+
+        this.nextBtn = <HTMLElement>(
+            workingEl.querySelector(`.${this.NextButtonClassName}`)
+        );
+
+        this.prevBtn = <HTMLElement>(
+            workingEl.querySelector(`.${this.PrevButtonClassName}`)
+        );
+    }
+
+    /**
      * Set carousel classes
      */
     protected setClasses(): void {
@@ -183,22 +200,5 @@ export class Carousel {
         this.nextBtn?.addEventListener('click', this.moveNext.bind(this));
 
         this.prevBtn?.addEventListener('click', this.movePrev.bind(this));
-    }
-
-    /**
-     * Setup child elements
-     */
-    protected setupChildElements(el?: HTMLElement): void {
-        const workingEl = <HTMLElement>el || this.mountedEl;
-
-        this.items = Array.from(workingEl.querySelectorAll(`.${this.ItemClassName}`));
-
-        this.nextBtn = <HTMLElement>(
-            workingEl.querySelector(`.${this.NextButtonClassName}`)
-        );
-
-        this.prevBtn = <HTMLElement>(
-            workingEl.querySelector(`.${this.PrevButtonClassName}`)
-        );
     }
 }
