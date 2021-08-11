@@ -68,8 +68,16 @@ header nav > * {
 }
 
 header nav a {
+    font-size: 20px;
     color: var(--theme-white);
     text-decoration: none;
+}
+
+header nav a.accent {
+    padding: calc(var(--margin-step) / 2);
+    font-weight: bold;
+    color: var(--theme-black);
+    background-color: var(--theme-accent);
 }
 
 header nav .trigger {
