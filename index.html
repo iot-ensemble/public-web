@@ -93,121 +93,23 @@
 
                         <div class="recipe-builder">
                             <div id="hardware" class="hardware">
+                                <!-- 
+                                    * Use a module or JS to build out a template - user defined
 
-                                <!-- Use a module or JS to build out a template - user defined -->
+                                    * Four ways to setup a template - 
+                                    * 1. Add HTML here
+                                    * 2. Convert HTML to a string and add it to the innerHTML of a parent element
+                                    * 3. Render it out using JS - CarouselTemplate.js is an example
+                                    * 4. Export HTML file in module and display it - working on that 
+                                    * (componenet/loaderTest/template.html) 
+                                 -->
                                 <script id="sjs-carousel" type="module">
                                     import { ComponentTest } from './packages/es/index.js';
                                     const componentTest = new ComponentTest();
                                     const el = document.getElementById('hardware');
 
                                     el.innerHTML += componentTest.ComponentAsString();
-
-                                    // import { CarouselTemplate } from './packages/es/index.js';
-                        
-                                    // const classList = ['option', 'sjs-carousel-item'];
-                                    // const hardware =  [
-                                    //     {
-                                    //         ClassList: classList,
-                                    //         Id: '0',
-                                    //         Img: './static/images/third-party/logos/Phoenixcontact.png',
-                                    //     },
-                                    //     {
-                                    //         ClassList: classList,
-                                    //         Id: '1',
-                                    //         Img: './static/images/third-party/logos/Advantech.png',
-                                    //     },
-                                    //     {
-                                    //         ClassList: classList,
-                                    //         Id: '2',
-                                    //         Img: './static/images/third-party/logos/MicroeLong.png',
-                                    //     },
-                                    //     {
-                                    //         ClassList: classList,
-                                    //         Id: '3',
-                                    //         Img: './static/images/third-party/logos/Inductiveautomation.png',
-                                    //     },
-                                    //     {
-                                    //         ClassList: classList,
-                                    //         Id: '4',
-                                    //         Img: './static/images/third-party/logos/Raspberry-Pi.png',
-                                    //     }
-                                    // ];
-                                    
-                                    // const hardwareTemplate = new CarouselTemplate( 
-                                    //     classList,
-                                    //     hardware
-                                    // );
-
-                                    // hardwareTemplate.Render(el);
-
                                 </script>
-
-
-                                <!-- <div class="option sjs-carousel-item">
-                                    <img
-                                        src="./static/images/third-party/logos/Adafruit.png"
-                                    />
-                                </div>
-
-                                <div class="option sjs-carousel-item">
-                                    <img
-                                        src="./static/images/third-party/logos/Advantech.png"
-                                    />
-                                </div>
-
-                                <div class="option sjs-carousel-item">
-                                    <img
-                                        src="./static/images/third-party/logos/Arduino.png"
-                                    />
-                                </div>
-
-                                <div class="option sjs-carousel-item">
-                                    <img
-                                        src="./static/images/third-party/logos/Arrow.png"
-                                    />
-                                </div>
-
-                                <div class="option sjs-carousel-item">
-                                    <img
-                                        src="./static/images/third-party/logos/Espressif.png"
-                                    />
-                                </div>
-
-                                <div class="option sjs-carousel-item">
-                                    <img
-                                        src="./static/images/third-party/logos/Inductiveautomation.png"
-                                    />
-                                </div>
-
-                                <div class="option sjs-carousel-item">
-                                    <img
-                                        src="./static/images/third-party/logos/MicroeLong.png"
-                                    />
-                                </div>
-
-                                <div class="option sjs-carousel-item">
-                                    <img
-                                        src="./static/images/third-party/logos/Multitech.png"
-                                    />
-                                </div>
-
-                                <div class="option sjs-carousel-item">
-                                    <img
-                                        src="./static/images/third-party/logos/Nodered.png"
-                                    />
-                                </div>
-
-                                <div class="option sjs-carousel-item">
-                                    <img
-                                        src="./static/images/third-party/logos/Phoenixcontact.png"
-                                    />
-                                </div>
-
-                                <div class="option sjs-carousel-item">
-                                    <img
-                                        src="./static/images/third-party/logos/Raspberry-Pi.png"
-                                    />
-                                </div> -->
 
                                 <div class="option sjs-carousel-item">
                                     <img
