@@ -1,0 +1,139 @@
+:root {
+    --dark-text: rbg(37,37,37);
+    --light-text: rbg(230, 230, 230);
+  }
+  
+  /**
+  * common flexbox settings
+  */
+  @mixin flex($direction) {
+    display: flex;
+    flex-flow: $direction;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /**
+  * common style for draggable items
+  */
+  @mixin draggable-item($background-color, $width, $height, $radius, $color: '') {
+  
+    background-color:$background-color;
+    width: $width;
+    height: $height;
+    border-radius: $radius;
+    color: $color;
+    /**
+    * this should work to pass a css variable to the mixin
+    * color: var(#{$color});
+    * we would pass it --light-text, for example
+    */
+    
+  }
+  
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+  }
+  
+  html, body {
+      height: 100%;
+  }
+  
+  body {
+      font-family: sans-serif;
+  }
+  
+  .container {
+      display: flex;
+      flex-flow: row;
+      background-color: rgb(144, 144, 144);
+      height: 100%;
+      min-height: 100%;
+      padding: 10px;
+      justify-content: end;
+  }
+  
+  .container > * {
+    margin: 10px;
+  }
+  
+  .ledger {
+    @include flex(column);
+    border: 3px dashed #31de5c;
+    padding: 10px;
+  }
+  
+  /**
+  * Each child elements gets a margin
+  */
+  .ledger > * {
+    margin: 10px;
+  }
+  
+  .draggable-request {
+    @include flex(row);
+    @include draggable-item(rgb(13, 187, 218), 250px, 50px, 5px, #252525);
+  }
+  
+  .draggable-filter {
+    @include flex(row);
+    @include draggable-item(rgb(0, 113, 179), 250px, 50px, 5px, #e6e6e6);
+  }
+  
+  .draggable-path {
+    @include flex(row);
+    @include draggable-item(rgb(13, 187, 218), 175px, 50px, 5px, #252525);
+  }
+  
+  .draggable-base {
+    @include flex(row);
+    @include draggable-item(rgb(37, 37, 37), 200px, 200px, 5px, #e6e6e6);
+  }
+  
+  .draggable-event {
+    @include flex(row);
+    @include draggable-item(rgb(0, 113, 179), 100px, 100px, 0);
+    transform:rotate(45deg);
+  }
+  
+  .draggable-event-text {
+    color: #e6e6e6;;
+    transform:rotate(-45deg);
+  }
+  
+  .drop-zone-container {
+    @include flex(row);
+    flex: 1;
+    border: 3px dashed #5f31de;
+  }
+  
+  .drop-zone {
+    width: 200px;
+    height: 200px;
+    float: left;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // border: 8px solid black;
+  }
+  
+  .border-blue {
+    border: 8px dashed #31cfde;
+  }
+  
+  .border-orange {
+    border: 8px dashed #DE4031;
+  }
+  
+  .drop-zone--over { opacity: 0.5}
+  
+  .myDraggableElement {
+    width: 50px;
+    height: 50px;
+    margin: 6px;
+    background-color: rgb(37, 37, 37);
+  }
+  
