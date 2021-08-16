@@ -25,15 +25,15 @@ export class ComponentTest {
         return JSON.stringify(fetch(relativeUrl));
     }
 
-    /**
-     * Return HTML from URL
-     * 
-     * @returns Promise that returns local .html file
-     */
-    public async ComponentTemplateFromURL(): Promise<string | void> {
+    // /**
+    //  * Return HTML from URL
+    //  * 
+    //  * @returns Promise that returns local .html file
+    //  */
+    // public async ComponentTemplateFromURL(): Promise<string | void> {
 
-         return await this.loadHTML('./template.html', import.meta.url);
-     }
+    //      return await this.loadHTML('./template.html', import.meta.url);
+    //  }
 
      /**
       * 
