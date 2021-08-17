@@ -1,6 +1,6 @@
 {
   "name": "@iot-ensemble/public-web",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "",
   "main": "./packages/cjs/common.js",
   "scripts": {
