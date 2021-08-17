@@ -127,8 +127,7 @@ header nav .trigger {
     font-size: 48px;
     font-weight: 900;
     letter-spacing: 0.25em;
-    display: inline-block;
-    text-align: right;
+    text-align: center;
 }
 
 .partners .container .recipe-builder {
@@ -206,6 +205,8 @@ header nav .trigger {
 
 .partnerverse img {
     max-width: 100%;
+    display: block;
+    margin: auto;
 }
 
 .call-to-action {
@@ -314,7 +315,6 @@ footer {
         font-size: 36px;
         font-weight: 900;
         letter-spacing: 0.25em;
-        display: block;
         text-align: center;
     }
 
