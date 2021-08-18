@@ -200,11 +200,15 @@ header nav .trigger {
     background-color: #11111160;
 }
 
-.partnerverse {
+.outgrown, .device-to-solution {
+    text-align: center;
+}
+
+.partnerverse, .outgrown, .device-to-solution {
     margin: calc(var(--margin-step) * 5);
 }
 
-.partnerverse img {
+.partnerverse img, .outgrown img, .device-to-solution img {
     max-width: 100%;
 }
 
