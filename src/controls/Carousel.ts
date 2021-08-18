@@ -1,3 +1,8 @@
+/**
+ * Custom string literal type for slide direction
+ */
+type SlideDirection = 'PREVIOUS' | 'NEXT';
+
 export class Carousel {
     //  Fields
     /**
@@ -45,11 +50,12 @@ export class Carousel {
     /**
      * The value of the next slide.
      */
+    
     public get NextSlide(): number {
         if (this.Slide >= this.TotalItems - 1) {
             return 0;
         } else {
-            return this.Slide + 1;
+                return this.Slide + 1; 
         }
     }
 

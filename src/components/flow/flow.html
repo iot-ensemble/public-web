@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Image Carousel</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./styles.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="ledger"> 
+                <div class="draggable-request">Request</div>
+                <div class="draggable-filter">Filter</div>
+                <div class="draggable-path">/Path</div>
+                <div class="draggable-base">Base</div>
+                <div class="draggable-event">
+                    <span class="draggable-event-text">
+                        Event
+                    </span>   
+                </div>
+            </div>
+
+            <div class="drop-zone-container">
+                <div class="drop-zone border-blue">
+                    <div 
+                        id="drag-item-0"
+                        class="myDraggableElement" 
+                        draggable="true">
+                    </div>
+                    <div 
+                        id="drag-item-1"
+                        class="myDraggableElement" 
+                        draggable="true">
+                    </div>
+                </div>
+                <div class="drop-zone border-orange">
+                </div>
+            </div>
+        </div>
+          <script src="./scripts.js" async defer></script>
+    </body>
+</html>
