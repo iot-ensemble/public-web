@@ -1,8 +1,8 @@
 env:
-    NAME: 'Build Release New Name'
+    NAME: ''
     BRANCHES: ['main', 'master']
 
-name: ${{ env.NAME }} 
+name: Build Release New Name
 
 on:
     push:
