@@ -6,7 +6,6 @@ on:
     pull_request:
         branches: [main, master]
 
-
 env:
   Branches: main,master
   NPMRegistry: 'https://registry.npmjs.org'
