@@ -25,8 +25,6 @@
         <script type="module" src="./packages/es/index.js"></script>
     </head>
     <body>
-
-
         <!-- <div id='root' style="height: 200px; width: 300px; background-color: cadetblue;"></div>
         <script id="sjs-load-test" type="module">
             import { ComponentTest } from './packages/es/index.js';
@@ -34,8 +32,6 @@
 
             componentTest.ComponentTemplate(document.getElementById('root'));
         </script> -->
-
-
 
         <div class="page">
             <header>
@@ -107,9 +103,11 @@
                                 <script id="sjs-carousel" type="module">
                                     import { ComponentTest } from './packages/es/index.js';
                                     const componentTest = new ComponentTest();
-                                    const el = document.getElementById('hardware');
+                                    const el =
+                                        document.getElementById('hardware');
 
-                                    el.innerHTML += componentTest.ComponentAsString();
+                                    el.innerHTML +=
+                                        componentTest.ComponentAsString();
                                 </script>
 
                                 <div class="option sjs-carousel-item">
