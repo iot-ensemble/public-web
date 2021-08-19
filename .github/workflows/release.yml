@@ -1,14 +1,13 @@
 env:
     NAME: ''
-    BRANCHES: ['main', 'master']
 
 name: Build Release New Name
 
 on:
     push:
-        branches: ${{ env.Branches }}
+        branches: ['main', 'master']
     pull_request:
-        branches: ${{ env.Branches }}
+        branches: ['main', 'master']
 
 jobs:
     build:
