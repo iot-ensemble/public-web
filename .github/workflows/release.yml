@@ -7,7 +7,7 @@ on:
         branches: ['main', 'master']
 
 env:
-  Branches: ['main', 'master']
+  Branches: main,master
   NPMRegistry: 'https://registry.npmjs.org'
   InstallCommand: npm ci
   DeployCommand: npm run deploy
