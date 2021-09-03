@@ -1,4 +1,4 @@
-export class LazyImage {
+export class LazySource {
   //  Fields
   protected mountedEls: Array<HTMLElement>;
 

@@ -4,6 +4,6 @@ import { ExpandSelect } from './controls/ExpandSelect.js';
 import { Carousel } from './controls/Carousel.js';
 import { CarouselTemplate } from './templates/CarouselTemplate.js';
 import { ComponentTest } from './components/loaderTest/component.js';
-import { LazyImage } from './controls/LazyImage.js'
+import { LazySource } from './controls/LazySource.js'
 
-export { PublicWebApplication, HTMLHead, ExpandSelect, Carousel, CarouselTemplate, ComponentTest, LazyImage };
+export { PublicWebApplication, HTMLHead, ExpandSelect, Carousel, CarouselTemplate, ComponentTest, LazySource };

@@ -15,15 +15,12 @@
     />
 
     <!-- Stylesheets -->
-    <!-- <link
-      rel="preload"
-      as="style"
+    <link
+      rel="stylesheet"
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
     />
 
-    <link rel="preload" as="style" href="./static/css/app.css" /> -->
-
-    <!-- <script type="module" defer src="./packages/es/index.js"></script> -->
+    <link rel="stylesheet" href="./static/css/app.css" />
   </head>
   <body>
     <!-- <div id='root' style="height: 200px; width: 300px; background-color: cadetblue;"></div>
@@ -57,7 +54,7 @@
           >
             <img
               class="icon sm"
-              src="./static/images/third-party/github-mark/GitHub-Mark-Light-64px.png"
+              data-src="./static/images/third-party/github-mark/GitHub-Mark-Light-64px.png"
               alt="Fathym"
             />
           </a>
@@ -70,11 +67,11 @@
 
       <div class="content">
         <section class="sjs-hero contain">
-          <!-- <object
+          <object
             class="image"
             type="image/svg+xml"
             data="./static/images/iot-hero-animated.svg"
-          ></object> -->
+          ></object>
 
           <div class="details">
             <h2 class="connect">Connect.</h2>
@@ -92,7 +89,39 @@
             <div class="recipe-builder">
               <div id="hardware" class="hardware">
                 <div class="option sjs-carousel-item">
-                  <img data-src="./static/images/third-party/logos/Sparkfun.png" />
+                  <img
+                    data-src="./static/images/third-party/logos/Sparkfun.png"
+                  />
+                </div>
+
+                <div class="option sjs-carousel-item">
+                  <img
+                    data-src="./static/images/third-party/logos/Phoenixcontact.png"
+                  />
+                </div>
+
+                <div class="option sjs-carousel-item">
+                  <img
+                    data-src="./static/images/third-party/logos/Advantech.png"
+                  />
+                </div>
+
+                <div class="option sjs-carousel-item">
+                  <img
+                    data-src="./static/images/third-party/logos/MicroeLong.png"
+                  />
+                </div>
+
+                <div class="option sjs-carousel-item">
+                  <img
+                    data-src="./static/images/third-party/logos/Inductiveautomation.png"
+                  />
+                </div>
+
+                <div class="option sjs-carousel-item">
+                  <img
+                    data-src="./static/images/third-party/logos/Raspberry-Pi.png"
+                  />
                 </div>
 
                 <div class="sjs-carousel-button-next"></div>
@@ -118,11 +147,13 @@
 
               <div id="software" class="software">
                 <div class="option sjs-carousel-item">
-                  <img src="./static/images/third-party/logos/D3js.png" />
+                  <img data-src="./static/images/third-party/logos/D3js.png" />
                 </div>
 
                 <div class="option sjs-carousel-item">
-                  <img data-src="./static/images/third-party/logos/Grafana.png" />
+                  <img
+                    data-src="./static/images/third-party/logos/Grafana.png"
+                  />
                 </div>
 
                 <div class="option sjs-carousel-item">
@@ -134,15 +165,21 @@
                 </div>
 
                 <div class="option sjs-carousel-item">
-                  <img data-src="./static/images/third-party/logos/Powerbi.png" />
+                  <img
+                    data-src="./static/images/third-party/logos/Powerbi.png"
+                  />
                 </div>
 
                 <div class="option sjs-carousel-item">
-                  <img data-src="./static/images/third-party/logos/Tableau.png" />
+                  <img
+                    data-src="./static/images/third-party/logos/Tableau.png"
+                  />
                 </div>
 
                 <div class="option sjs-carousel-item">
-                  <img data-src="./static/images/third-party/logos/Zapier.png" />
+                  <img
+                    data-src="./static/images/third-party/logos/Zapier.png"
+                  />
                 </div>
 
                 <div class="sjs-carousel-button-next"></div>
@@ -255,7 +292,7 @@
 
             <div>
               <img
-              data-src="./static/images/isometric-iot-ensemble-lcu-whitelabel-white.png"
+                data-src="./static/images/isometric-iot-ensemble-lcu-whitelabel-white.png"
               />
             </div>
           </div>
@@ -321,20 +358,20 @@
     </div>
 
     <!-- Carousel -->
-    <script id="sjs-carousel" type="module">
-      import { Carousel, LazyImage } from './packages/es/index.js';
+    <script id="sjs-carousel" defer type="module">
+      import { Carousel, LazySource } from './packages/es/index.js';
 
-      // const hwCarousel = new Carousel();
+      const hwCarousel = new Carousel();
 
-      // hwCarousel.Mount('.hardware');
+      hwCarousel.Mount('.hardware');
 
-      // const swCarousel = new Carousel();
+      const swCarousel = new Carousel();
 
-      // swCarousel.Mount('.software');
+      swCarousel.Mount('.software');
 
-      const lazyImages = new LazyImage();
+      const lazySrcs = new LazySource();
 
-      lazyImages.Mount('img');
+      lazySrcs.Mount('img[data-src]');
     </script>
 
     <!-- Recipes -->
