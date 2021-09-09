@@ -28,34 +28,36 @@ jobs:
         with:
           fetch-depth: '0'
 
-      # get branch base
-      - name: Get Branch Base
-        id: branchBase
-        uses: andac-ozcan/actions-find-and-replace-string@3
-        with:
-          source: ${{ github.ref }}
-          find: 'ref/heads/'
-          replace: ''
+      # # get branch base
+      # - name: Get Branch Base
+      #   id: branchBase
+      #   uses: andac-ozcan/actions-find-and-replace-string@3
+      #   with:
+      #     source: ${{ github.ref }}
+      #     find: 'ref/heads/'
+      #     replace: ''
 
-      - run: echo "Starting branch ${{ github.ref }}"
-      - run: echo "Branch Base ${{ steps.branchBase.outputs.value }}"
+      # - run: echo "Starting branch ${{ github.ref }}"
+      # - run: echo "Branch Base ${{ steps.branchBase.outputs.value }}"
 
-      # get branch adjusted
-      - name: Get Branch Adjusted
-        id: branchAdjusted
-        uses: andac-ozcan/actions-find-and-replace-string@3
-        with:
-          source: ${{ steps.branchBase.outputs.value }}
-          find: '/'
-          replace: '-'
+      # # get branch adjusted
+      # - name: Get Branch Adjusted
+      #   id: branchAdjusted
+      #   uses: andac-ozcan/actions-find-and-replace-string@3
+      #   with:
+      #     source: ${{ steps.branchBase.outputs.value }}
+      #     find: '/'
+      #     replace: '-'
           
-      - run: echo "Branch Adjusted ${{ steps.branchAdjusted.outputs.value }}"
+      # - run: echo "Branch Adjusted ${{ steps.branchAdjusted.outputs.value }}"
 
       # set variables
       - name: Set variables
         id: vars
         run: |
           echo ::set-output name=branchName::$BRANCH
+
+          echo ::set-output name=a::${$BRANCH/refs\/head\//}
 
           if ['$BRANCH' == '$MAIN_BRANCH']
           then
@@ -69,6 +71,7 @@ jobs:
       - name: Variable Checks
         run: |
           echo "Current branch is ${{ steps.vars.outputs.branchName }}"
+          echo "a is ${{ steps.vars.outputs.a }}"
           echo "Version bump type is ${{ steps.vars.outputs.versionBump }}"
 
       # bump version and push tag
