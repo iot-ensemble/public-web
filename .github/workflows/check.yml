@@ -18,7 +18,8 @@ env:
 
 jobs:
   build:
-    name: Build and Publish Test
+    # checkout repository
+    name: Build and Publish
     runs-on: ubuntu-latest
     steps:
       # checkout repository
