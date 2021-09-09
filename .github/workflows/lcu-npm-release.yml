@@ -43,7 +43,7 @@ jobs:
         run: |
           echo ::set-output name=a::${BRANCH////-}
 
-          if ['${GITHUB_REF##*/}' == '$MAIN_BRANCH']
+          if ['$BRANCH' == '$MAIN_BRANCH']
           then
             echo ::set-output name=branchName::${GITHUB_REF////-}
             echo "::set-output name=versionBump::minor"
