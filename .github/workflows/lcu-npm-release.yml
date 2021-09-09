@@ -42,7 +42,7 @@ jobs:
         id: branchAdjusted
         uses: mad9000/actions-find-and-replace-string@2
         with:
-          source: ${{ steps.branchBase.outputs.main }}
+          source: ${{ steps.branchBase.outputs.value }}
           find: 'ref/heads/'
           replace: ''
 
@@ -50,23 +50,19 @@ jobs:
       - name: Set variables
         id: vars
         run: |
-          echo ::set-output name=a::${BRANCH////-}
+            echo ::set-output name=branchName::$BRANCH
 
           if ['$BRANCH' == '$MAIN_BRANCH']
           then
-            echo ::set-output name=branchName::$BRANCH
             echo "::set-output name=versionBump::minor"
           else
-            echo ::set-output name=branchName::$BRANCH
             echo "::set-output name=versionBump::patch"
           fi
         env:
-          BRANCH: ${{ steps.branchAdjusted.outputs.main }}
+          BRANCH: ${{ steps.branchAdjusted.outputs.value }}
 
       - name: Variable Checks
         run: |
-          echo "GitHub Ref ${{ github.ref }}"
-          echo "GitHub Ref a ${{ steps.vars.outputs.a }}"
           echo "Current branch is ${{ steps.vars.outputs.branchName }}"
           echo "Version bump type is ${{ steps.vars.outputs.versionBump }}"
 
