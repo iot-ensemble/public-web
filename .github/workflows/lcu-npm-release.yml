@@ -41,7 +41,7 @@ jobs:
       - name: Set variables
         id: vars
         run: |
-          echo ::set-output name=a::${{steps.vars.outputs.branchName////-}}
+          echo ::set-output name=a::${BRANCH////-}
 
           if ['${GITHUB_REF##*/}' == '$MAIN_BRANCH']
           then
