@@ -59,11 +59,11 @@ jobs:
 
           toReplace = 'refs/head/'
 
-          echo ::set-output name=a::${$BRANCH/$toReplace/}
+          echo ::set-output name=a::${BRANCH/$toReplace/}
 
           toReplace = '/'
 
-          echo ::set-output name=a::${$BRANCH/$toReplace/-}
+          echo ::set-output name=a::${BRANCH/$toReplace/-}
 
           if ['$BRANCH' == '$MAIN_BRANCH']
           then
