@@ -47,8 +47,9 @@ jobs:
           WITH_V: false
       - run: echo "The new version is ${{ steps.versionBump.outputs.new_tag }}"
 
-      # replace text in package.json
-      - name: replace version text
+      # replace text in package.json for main branch
+      - name: replace version text for main branch
+        if: ${{ steps.vars.outputs.branchName == env.MainBranch }}
         shell: pwsh
         run: (Get-Content -path package.json -Raw) -replace "version patch","version ${{ steps.versionBump.outputs.new_tag }} --no-git-tag-version -f" | Set-Content -Path package.json
 
