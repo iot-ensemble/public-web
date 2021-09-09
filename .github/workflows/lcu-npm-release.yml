@@ -52,8 +52,9 @@ jobs:
         id: versionBump
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          RELEASE_BRANCHES: ${{ env.Branches }}
+          RELEASE_BRANCHES: ${{ steps.vars.outputs.branchName }}
           DEFAULT_BUMP: ${{ steps.vars.outputs.versionBump }}
+          TAG_CONTEXT: branch
           WITH_V: false
       - run: echo "New version is ${{ steps.versionBump.outputs.new_tag }}"
 
