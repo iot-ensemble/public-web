@@ -61,9 +61,9 @@ jobs:
           replaceWith=''
 
           echo ::set-output name=a::${BRANCH/$toReplace/$replaceWith}
-
+h
         env:
-          BRANCH: ${{ steps.branchAdjusted.outputs.value }}
+          BRANCH: ${{ github.ref }}
 
       - name: Variable Checks
         run: |
