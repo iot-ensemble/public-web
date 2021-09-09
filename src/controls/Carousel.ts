@@ -3,6 +3,7 @@
  */
 type SlideDirection = 'PREVIOUS' | 'NEXT';
 
+
 export class Carousel {
     //  Fields
     /**
