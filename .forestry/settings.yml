@@ -5,6 +5,13 @@ admin_path:
 webhook_url: 
 sections:
 - type: directory
+  path: src/pairings
+  label: Pairings
+  create: all
+  match: "**/*.md"
+  templates:
+  - pairings
+- type: directory
   path: src/partners
   label: Partners
   create: all
