@@ -33,7 +33,7 @@ jobs:
         id: vars
         run: |
           echo ::set-output name=a::${GITHUB_REF##*/}
-          echo ::set-output name=b::${GITHUB_REF#*/}
+          echo ::set-output name=b::${GITHUB_REF##*refs/heads/}
           echo ::set-output name=c::${GITHUB_REF////-}
           echo ::set-output name=d::${GITHUB_REF//-}
           echo ::set-output name=e::${GITHUB_REF#*///-}
