@@ -2,9 +2,9 @@ name: NPM - Release
 
 on:
   push:
-    branches: [main,integration,feature/**]
+    branches: [main, integration, feature/**]
   pull_request:
-    branches: [main,integration,feature/**]
+    branches: [main, integration, feature/**]
 
 env:
   Branches: main,integration,feature/**
@@ -14,7 +14,7 @@ env:
   DeployCommand: npm run deploy
   Organization: iot-ensemble
   Repository: public-web
-  Output: 
+  Output:
 
 jobs:
   build:
@@ -32,21 +32,20 @@ jobs:
       - name: Set variables
         id: vars
         run: |
-          echo ::set-output name=branchName::${GITHUB_REF##*/}
-          
-          if ['$BRANCH' == '$MAIN_BRANCH']
+          if ['${GITHUB_REF##*/}' == '$MAIN_BRANCH']
           then
-              echo "::set-output name=versionBump::minor"
-              echo "::set-output name=prerelease::true"
+            echo ::set-output name=branchName::${GITHUB_REF##*/}
+            echo "::set-output name=versionBump::minor"
+            echo "::set-output name=prerelease::true"
           else
-              echo "::set-output name=versionBump::patch"
-              echo "::set-output name=prerelease::false"
+            echo ::set-output name=branchName::${GITHUB_REF#*/}
+            echo "::set-output name=versionBump::patch"
+            echo "::set-output name=prerelease::false"
           fi
         env:
           BRANCH: ${{ steps.vars.outputs.branchName }}
           MAIN_BRANCH: ${{ env.MainBranch }}
       - run: echo "GitHub Ref ${{ github.ref }}"
-      - run: echo "GitHub Ref ${{ github.ref##*/ }}"
       - run: echo "Current branch is ${{ steps.vars.outputs.branchName }}"
       - run: echo "Version is prerelease? ${{ steps.vars.outputs.prerelease }}"
       - run: echo "Version bump type is ${{ steps.vars.outputs.versionBump }}"
