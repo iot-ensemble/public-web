@@ -41,12 +41,12 @@ jobs:
       - run: echo "Branch Base ${{ steps.branchBase.outputs.value }}"
 
       # get branch adjusted
-      - name: Get Branch Base
+      - name: Get Branch Adjusted
         id: branchAdjusted
         uses: mad9000/actions-find-and-replace-string@2
         with:
           source: ${{ steps.branchBase.outputs.value }}
-          find: '/'
+          find: /\//g
           replace: '-'
           
       - run: echo "Branch Adjusted ${{ steps.branchAdjusted.outputs.value }}"
