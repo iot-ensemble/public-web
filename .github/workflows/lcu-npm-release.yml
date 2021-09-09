@@ -81,6 +81,7 @@ jobs:
           PRERELEASE_SUFFIX: ${{ steps.vars.outputs.branchName }}
           RELEASE_BRANCHES: ${{ env.MainBranch }}
           TAG_CONTEXT: branch
+          PRE_RELEASE: ${{ steps.vars.outputs.prerelease }}
           WITH_V: false
       - run: echo "New version is ${{ steps.versionBump.outputs.new_tag }}"
 

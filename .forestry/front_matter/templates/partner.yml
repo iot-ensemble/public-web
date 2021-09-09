@@ -33,3 +33,11 @@ fields:
       path: 
   label: Type
   description: The type (input|output) of the partner.
+- name: Image
+  type: file
+  config:
+    maxSize: 64
+  label: Image
+  description: The image of the partner
+pages:
+- src/partners/mikroe.md
