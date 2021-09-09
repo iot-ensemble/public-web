@@ -61,6 +61,10 @@ jobs:
 
           echo ::set-output name=a::${$BRANCH/$toReplace/}
 
+          toReplace = '/'
+
+          echo ::set-output name=a::${$BRANCH/$toReplace/-}
+
           if ['$BRANCH' == '$MAIN_BRANCH']
           then
             echo "::set-output name=versionBump::minor"
