@@ -37,14 +37,19 @@ jobs:
           find: 'ref/heads/'
           replace: ''
 
+      - run: echo "Starting branch ${{ github.ref }}"
+      - run: echo "Branch Base ${{ steps.branchBase.outputs.value }}"
+
       # get branch adjusted
       - name: Get Branch Base
         id: branchAdjusted
         uses: mad9000/actions-find-and-replace-string@2
         with:
           source: ${{ steps.branchBase.outputs.value }}
-          find: 'ref/heads/'
-          replace: ''
+          find: '/'
+          replace: '-'
+          
+      - run: echo "Branch Adjusted ${{ steps.branchAdjusted.outputs.value }}"
 
       # set variables
       - name: Set variables
