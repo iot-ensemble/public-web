@@ -121,8 +121,8 @@
                                 <div class="sjs-carousel-button-prev"></div>
                             </div>
 
-                            <div class="plus">
-                                <span class="material-icons icon xl">add</span>
+                            <div class="arrow">
+                                <span class="material-icons icon xl">arrow_forward</span>
                             </div>
 
                             <div class="thinky">
@@ -142,42 +142,49 @@
                             <div id="software" class="software">
                                 <div class="option sjs-carousel-item">
                                     <img
+                                        id="D3js"
                                         src="./static/images/third-party/logos/D3js.png"
                                     />
                                 </div>
 
                                 <div class="option sjs-carousel-item">
                                     <img
+                                        id="Grafana"
                                         src="./static/images/third-party/logos/Grafana.png"
                                     />
                                 </div>
 
                                 <div class="option sjs-carousel-item">
                                     <img
+                                        id="IFTTT"
                                         src="./static/images/third-party/logos/IFTTT.png"
                                     />
                                 </div>
 
                                 <div class="option sjs-carousel-item">
                                     <img
+                                        id="MSsql"
                                         src="./static/images/third-party/logos/MSsql.png"
                                     />
                                 </div>
 
                                 <div class="option sjs-carousel-item">
                                     <img
+                                        id="Powerbi"
                                         src="./static/images/third-party/logos/Powerbi.png"
                                     />
                                 </div>
 
                                 <div class="option sjs-carousel-item">
                                     <img
+                                        id="Tableau"
                                         src="./static/images/third-party/logos/Tableau.png"
                                     />
                                 </div>
 
                                 <div class="option sjs-carousel-item">
                                     <img
+                                        id="Zapier"
                                         src="./static/images/third-party/logos/Zapier.png"
                                     />
                                 </div>
@@ -187,6 +194,15 @@
                                 <div class="sjs-carousel-button-prev"></div>
                             </div>
                         </div>
+
+                        <!-- begin -->
+                        <!-- <iframe 
+                            src="https://www.iot-ensemble.com/blog/blogs/2021/july/2021-07-03-mikroe-email-text-alerts" 
+                            frameborder="0"
+                            width="100%"
+                            height="500px">
+                        </iframe> -->
+                        <!-- end -->
 
                         <div class="actions">
                             <a href="/dashboard">Get Started</a>
@@ -473,10 +489,12 @@
             const hwCarousel = new Carousel();
 
             hwCarousel.Mount('.hardware');
+            hwCarousel.SlideInterval(2000);
 
             const swCarousel = new Carousel();
 
             swCarousel.Mount('.software');
+            swCarousel.SlideInterval(4000);
         </script>
 
         <!-- Recipes -->
