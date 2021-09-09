@@ -2,9 +2,9 @@ name: NPM - Release
 
 on:
   push:
-    branches: [main, integration, feature/**]
+    branches: [main,integration,feature/**]
   pull_request:
-    branches: [main, integration, feature/**]
+    branches: [main,integration,feature/**]
 
 env:
   Branches: main,integration,feature/**
@@ -14,11 +14,11 @@ env:
   DeployCommand: npm run deploy
   Organization: iot-ensemble
   Repository: public-web
-  Output:
+  Output: 
 
 jobs:
   build:
-    # checkout repository
+    # Build And Publish
     name: Build and Publish
     runs-on: ubuntu-latest
     steps:
