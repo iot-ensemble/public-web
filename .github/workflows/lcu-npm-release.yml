@@ -50,7 +50,7 @@ jobs:
       - name: Set variables
         id: vars
         run: |
-            echo ::set-output name=branchName::$BRANCH
+          echo ::set-output name=branchName::$BRANCH
 
           if ['$BRANCH' == '$MAIN_BRANCH']
           then
