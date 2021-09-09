@@ -57,7 +57,9 @@ jobs:
         run: |
           echo ::set-output name=branchName::$BRANCH
 
-          echo ::set-output name=a::${$BRANCH/refs\/head\//}
+          toReplace = 'refs/head/'
+
+          echo ::set-output name=a::${$BRANCH/$toReplace/}
 
           if ['$BRANCH' == '$MAIN_BRANCH']
           then
