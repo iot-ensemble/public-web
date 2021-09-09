@@ -28,15 +28,20 @@ jobs:
         with:
           fetch-depth: '0'
 
+      # get branch base
+      - name: Get Branch Base
+        id: branchBase
+        uses: mad9000/actions-find-and-replace-string@2
+        with:
+          source: ${{ github.ref }}
+          find: 'ref/heads/'
+          replace: ''
+
       # set variables
       - name: Set variables
         id: vars
         run: |
-          echo ::set-output name=a::${GITHUB_REF##*/}
-          echo ::set-output name=b::${GITHUB_REF##*refs/heads/}
-          echo ::set-output name=c::${GITHUB_REF////-}
-          echo ::set-output name=d::${GITHUB_REF//-}
-          echo ::set-output name=e::${GITHUB_REF#*///-}
+          echo ::set-output name=a::${{steps.vars.outputs.branchName////-}}
 
           if ['${GITHUB_REF##*/}' == '$MAIN_BRANCH']
           then
@@ -50,16 +55,11 @@ jobs:
           fi
         env:
           BRANCH: ${{ steps.vars.outputs.branchName }}
-          MAIN_BRANCH: ${{ env.MainBranch }}
 
       - name: Variable Checks
         run: |
           echo "GitHub Ref ${{ github.ref }}"
           echo "GitHub Ref a ${{ steps.vars.outputs.a }}"
-          echo "GitHub Ref b ${{ steps.vars.outputs.b }}"
-          echo "GitHub Ref c ${{ steps.vars.outputs.c }}"
-          echo "GitHub Ref d ${{ steps.vars.outputs.d }}"
-          echo "GitHub Ref e ${{ steps.vars.outputs.e }}"
           echo "Current branch is ${{ steps.vars.outputs.branchName }}"
           echo "Prerelease suffix is ${{ steps.vars.outputs.prerelease }}"
           echo "Version bump type is ${{ steps.vars.outputs.versionBump }}"
