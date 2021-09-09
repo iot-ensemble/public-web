@@ -61,7 +61,7 @@ jobs:
           replaceWith=''
 
           echo ::set-output name=a::${BRANCH/$toReplace/$replaceWith}
-h
+
         env:
           BRANCH: ${{ github.ref }}
 
