@@ -46,7 +46,7 @@ jobs:
         uses: andac-ozcan/actions-find-and-replace-string@3
         with:
           source: ${{ steps.branchBase.outputs.value }}
-          find: /\//g
+          find: '/'
           replace: '-'
           
       - run: echo "Branch Adjusted ${{ steps.branchAdjusted.outputs.value }}"
