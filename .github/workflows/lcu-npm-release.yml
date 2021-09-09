@@ -43,6 +43,7 @@ jobs:
         env:
           BRANCH: ${{ steps.vars.outputs.branchName }}
           MAIN_BRANCH: ${{ env.MainBranch }}
+      - run: echo "GitHub Ref ${{ github.ref }}"
       - run: echo "Current branch is ${{ steps.vars.outputs.branchName }}"
       - run: echo "Version bump type is ${{ steps.vars.outputs.versionBump }}"
 
