@@ -32,6 +32,12 @@ jobs:
       - name: Set variables
         id: vars
         run: |
+          echo ::set-output name=a::${GITHUB_REF##*/}
+          echo ::set-output name=b::${GITHUB_REF#*/}
+          echo ::set-output name=c::${GITHUB_REF////-}
+          echo ::set-output name=d::${GITHUB_REF//-}
+          echo ::set-output name=e::${GITHUB_REF#*///-}
+
           if ['${GITHUB_REF##*/}' == '$MAIN_BRANCH']
           then
             echo ::set-output name=branchName::${GITHUB_REF////-}
@@ -46,6 +52,11 @@ jobs:
           BRANCH: ${{ steps.vars.outputs.branchName }}
           MAIN_BRANCH: ${{ env.MainBranch }}
       - run: echo "GitHub Ref ${{ github.ref }}"
+      - run: echo "GitHub Ref ${{ steps.vars.outputs.a }}"
+      - run: echo "GitHub Ref ${{ steps.vars.outputs.b }}"
+      - run: echo "GitHub Ref ${{ steps.vars.outputs.c }}"
+      - run: echo "GitHub Ref ${{ steps.vars.outputs.d }}"
+      - run: echo "GitHub Ref ${{ steps.vars.outputs.e }}"
       - run: echo "Current branch is ${{ steps.vars.outputs.branchName }}"
       - run: echo "Prerelease suffix is ${{ steps.vars.outputs.prerelease }}"
       - run: echo "Version bump type is ${{ steps.vars.outputs.versionBump }}"
