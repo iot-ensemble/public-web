@@ -62,12 +62,6 @@ jobs:
 
           echo ::set-output name=a::${BRANCH/$toReplace/$replaceWith}
 
-          if ['$BRANCH' == '$MAIN_BRANCH']
-          then
-            echo "::set-output name=versionBump::minor"
-          else
-            echo "::set-output name=versionBump::patch"
-          fi
         env:
           BRANCH: ${{ steps.branchAdjusted.outputs.value }}
 
