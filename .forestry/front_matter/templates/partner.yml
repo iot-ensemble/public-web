@@ -39,3 +39,5 @@ fields:
     maxSize: 64
   label: Image
   description: The image of the partner
+pages:
+- src/partners/mikroe.md
