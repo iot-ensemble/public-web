@@ -47,7 +47,7 @@ jobs:
           MAIN_BRANCH: ${{ env.MainBranch }}
       - run: echo "GitHub Ref ${{ github.ref }}"
       - run: echo "Current branch is ${{ steps.vars.outputs.branchName }}"
-      - run: echo "Version is prerelease? ${{ steps.vars.outputs.prerelease }}"
+      - run: echo "Prerelease suffix is ${{ steps.vars.outputs.prerelease }}"
       - run: echo "Version bump type is ${{ steps.vars.outputs.versionBump }}"
 
       # bump version and push tag
@@ -55,11 +55,11 @@ jobs:
         uses: anothrNick/github-tag-action@1.26.0
         id: versionBump
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          RELEASE_BRANCHES: ${{ steps.vars.outputs.branchName }}
           DEFAULT_BUMP: ${{ steps.vars.outputs.versionBump }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PRERELEASE_SUFFIX: ${{ steps.vars.outputs.prerelease }}
+          RELEASE_BRANCHES: ${{ env.MainBranch }}
           TAG_CONTEXT: branch
-          PRE_RELEASE: ${{ steps.vars.outputs.prerelease }}
           WITH_V: false
       - run: echo "New version is ${{ steps.versionBump.outputs.new_tag }}"
 
