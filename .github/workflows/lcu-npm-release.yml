@@ -55,11 +55,11 @@ jobs:
       - name: Variable Checks
         run: |
           echo "GitHub Ref ${{ github.ref }}"
-          echo "GitHub Ref ${{ steps.vars.outputs.a }}"
-          echo "GitHub Ref ${{ steps.vars.outputs.b }}"
-          echo "GitHub Ref ${{ steps.vars.outputs.c }}"
-          echo "GitHub Ref ${{ steps.vars.outputs.d }}"
-          echo "GitHub Ref ${{ steps.vars.outputs.e }}"
+          echo "GitHub Ref a ${{ steps.vars.outputs.a }}"
+          echo "GitHub Ref b ${{ steps.vars.outputs.b }}"
+          echo "GitHub Ref c ${{ steps.vars.outputs.c }}"
+          echo "GitHub Ref d ${{ steps.vars.outputs.d }}"
+          echo "GitHub Ref e ${{ steps.vars.outputs.e }}"
           echo "Current branch is ${{ steps.vars.outputs.branchName }}"
           echo "Prerelease suffix is ${{ steps.vars.outputs.prerelease }}"
           echo "Version bump type is ${{ steps.vars.outputs.versionBump }}"
