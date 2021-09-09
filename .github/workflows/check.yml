@@ -34,7 +34,7 @@ jobs:
         run: echo ::set-output name=branchName::${GITHUB_REF##*/}
 
       - name: Echo current branch
-        run: echo "The current branch is ${{ steps.vars.outputs.short_ref }}"
+        run: echo "The current branch is ${{ steps.vars.outputs.branchName }}"
 
       # bump version and push tag
       - name: Bump version and push tag
