@@ -34,11 +34,11 @@ jobs:
         run: |
           if ['${GITHUB_REF##*/}' == '$MAIN_BRANCH']
           then
-            echo ::set-output name=branchName::${GITHUB_REF##*/}
+            echo ::set-output name=branchName::${GITHUB_REF////-}
             echo "::set-output name=versionBump::minor"
             echo "::set-output name=prerelease::true"
           else
-            echo ::set-output name=branchName::${GITHUB_REF#*/}
+            echo ::set-output name=branchName::${GITHUB_REF////-}
             echo "::set-output name=versionBump::patch"
             echo "::set-output name=prerelease::false"
           fi
