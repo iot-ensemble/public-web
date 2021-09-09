@@ -51,15 +51,18 @@ jobs:
         env:
           BRANCH: ${{ steps.vars.outputs.branchName }}
           MAIN_BRANCH: ${{ env.MainBranch }}
-      - run: echo "GitHub Ref ${{ github.ref }}"
-      - run: echo "GitHub Ref ${{ steps.vars.outputs.a }}"
-      - run: echo "GitHub Ref ${{ steps.vars.outputs.b }}"
-      - run: echo "GitHub Ref ${{ steps.vars.outputs.c }}"
-      - run: echo "GitHub Ref ${{ steps.vars.outputs.d }}"
-      - run: echo "GitHub Ref ${{ steps.vars.outputs.e }}"
-      - run: echo "Current branch is ${{ steps.vars.outputs.branchName }}"
-      - run: echo "Prerelease suffix is ${{ steps.vars.outputs.prerelease }}"
-      - run: echo "Version bump type is ${{ steps.vars.outputs.versionBump }}"
+
+      - name: Variable Checks
+        run: |
+          echo "GitHub Ref ${{ github.ref }}"
+          echo "GitHub Ref ${{ steps.vars.outputs.a }}"
+          echo "GitHub Ref ${{ steps.vars.outputs.b }}"
+          echo "GitHub Ref ${{ steps.vars.outputs.c }}"
+          echo "GitHub Ref ${{ steps.vars.outputs.d }}"
+          echo "GitHub Ref ${{ steps.vars.outputs.e }}"
+          echo "Current branch is ${{ steps.vars.outputs.branchName }}"
+          echo "Prerelease suffix is ${{ steps.vars.outputs.prerelease }}"
+          echo "Version bump type is ${{ steps.vars.outputs.versionBump }}"
 
       # bump version and push tag
       - name: Bump version and push tag
