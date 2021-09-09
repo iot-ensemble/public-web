@@ -37,6 +37,15 @@ jobs:
           find: 'ref/heads/'
           replace: ''
 
+      # get branch adjusted
+      - name: Get Branch Base
+        id: branchAdjusted
+        uses: mad9000/actions-find-and-replace-string@2
+        with:
+          source: ${{ steps.branchBase.outputs.main }}
+          find: 'ref/heads/'
+          replace: ''
+
       # set variables
       - name: Set variables
         id: vars
@@ -45,23 +54,20 @@ jobs:
 
           if ['$BRANCH' == '$MAIN_BRANCH']
           then
-            echo ::set-output name=branchName::${GITHUB_REF////-}
+            echo ::set-output name=branchName::$BRANCH
             echo "::set-output name=versionBump::minor"
-            echo "::set-output name=prerelease::true" 
           else
-            echo ::set-output name=branchName::${GITHUB_REF////-}
+            echo ::set-output name=branchName::$BRANCH
             echo "::set-output name=versionBump::patch"
-            echo "::set-output name=prerelease::false"
           fi
         env:
-          BRANCH: ${{ steps.vars.outputs.branchName }}
+          BRANCH: ${{ steps.branchAdjusted.outputs.main }}
 
       - name: Variable Checks
         run: |
           echo "GitHub Ref ${{ github.ref }}"
           echo "GitHub Ref a ${{ steps.vars.outputs.a }}"
           echo "Current branch is ${{ steps.vars.outputs.branchName }}"
-          echo "Prerelease suffix is ${{ steps.vars.outputs.prerelease }}"
           echo "Version bump type is ${{ steps.vars.outputs.versionBump }}"
 
       # bump version and push tag
