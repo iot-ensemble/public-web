@@ -11,7 +11,7 @@ env:
   MainBranch: main
   NPMRegistry: https://registry.npmjs.org/
   InstallCommand: npm ci
-  DeployCommand: npm run build
+  DeployCommand: npm run deploy
   Organization: iot-ensemble
   Repository: public-web
   Output: 
