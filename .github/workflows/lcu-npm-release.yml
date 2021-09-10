@@ -48,9 +48,8 @@ jobs:
         env:
           BRANCH:  ${{ steps.branch.outputs.name }}
           
-      - name: Set Variable Checks
-        run: |
-          echo "GitHub Ref ${{ github.ref }}"
+      - run: |
+          echo "Set Variable Checks ${{ github.ref }}"
           echo "Current branch is ${{ steps.vars.outputs.branchName }}"
           echo "Version bump type is ${{ steps.vars.outputs.versionBump }}"
 
