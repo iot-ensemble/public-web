@@ -37,16 +37,14 @@ jobs:
       - name: Set variables
         id: vars
         run: |
-          echo ::set-output name=branchName::$BRANCH
+          echo ::set-output name=branchName::${{ steps.branch.outputs.name }}
           
-          if [$BRANCH == "${{ env.MainBranch }}"]
+          if ["${{ steps.branch.outputs.name }}" == "${{ env.MainBranch }}"]
           then
               echo "::set-output name=versionBump::minor"
           else
               echo "::set-output name=versionBump::patch"
           fi
-        env:
-          BRANCH: ${{ steps.branch.outputs.name }}
           
       - run: |
           echo "Set Variable Checks ${{ github.ref }}"
