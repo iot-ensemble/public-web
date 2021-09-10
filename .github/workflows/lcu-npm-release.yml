@@ -28,45 +28,27 @@ jobs:
         with:
           fetch-depth: '0'
 
-      # # get branch base
-      # - name: Get Branch Base
-      #   id: branchBase
-      #   uses: andac-ozcan/actions-find-and-replace-string@3
-      #   with:
-      #     source: ${{ github.ref }}
-      #     find: 'ref/heads/'
-      #     replace: ''
-
-      # - run: echo "Starting branch ${{ github.ref }}"
-      # - run: echo "Branch Base ${{ steps.branchBase.outputs.value }}"
-
-      # # get branch adjusted
-      # - name: Get Branch Adjusted
-      #   id: branchAdjusted
-      #   uses: andac-ozcan/actions-find-and-replace-string@3
-      #   with:
-      #     source: ${{ steps.branchBase.outputs.value }}
-      #     find: '/'
-      #     replace: '-'
-          
-      # - run: echo "Branch Adjusted ${{ steps.branchAdjusted.outputs.value }}"
-
       # set variables
       - name: Set variables
         id: vars
         run: |
-          echo ::set-output name=branchName::$BRANCH
-
-          toReplace='refs/head/'
-          replaceWith=''
-
-          echo ::set-output name=a::${BRANCH/$toReplace/$replaceWith}
-
+          echo ::set-output name=branchName::${GITHUB_REF##*/}
+          
+          if ['$BRANCH' == '$MAIN_BRANCH']
+          then
+              echo "::set-output name=versionBump::minor"
+              echo "::set-output name=prerelease::true"
+          else
+              echo "::set-output name=versionBump::patch"
+              echo "::set-output name=prerelease::false"
+          fi
         env:
-          BRANCH: ${{ github.ref }}
-
-      - name: Variable Checks
+          BRANCH: ${{ steps.vars.outputs.branchName }}
+          MAIN_BRANCH: ${{ env.MainBranch }}
+          
+      - name: Set Variable Checks
         run: |
+          echo "GitHub Ref ${{ github.ref }}"
           echo "Current branch is ${{ steps.vars.outputs.branchName }}"
           echo "a is ${{ steps.vars.outputs.a }}"
           echo "Version bump type is ${{ steps.vars.outputs.versionBump }}"
@@ -81,13 +63,12 @@ jobs:
           PRERELEASE_SUFFIX: ${{ steps.vars.outputs.branchName }}
           RELEASE_BRANCHES: ${{ env.MainBranch }}
           TAG_CONTEXT: branch
-          PRE_RELEASE: ${{ steps.vars.outputs.prerelease }}
           WITH_V: false
       - run: echo "New version is ${{ steps.versionBump.outputs.new_tag }}"
 
       # replace text in package.json for main branch
       - name: replace version text for main branch
-        if: ${{ steps.vars.outputs.branchName == env.MainBranch }}
+        # if: ${{ steps.vars.outputs.branchName == env.MainBranch }}
         shell: pwsh
         run: (Get-Content -path package.json -Raw) -replace "version patch","version ${{ steps.versionBump.outputs.new_tag }} --no-git-tag-version -f" | Set-Content -Path package.json
 
@@ -97,10 +78,10 @@ jobs:
         shell: pwsh
         run: (Get-Content -path package.json -Raw) -replace "--access public","--access public --tag ${{ steps.vars.outputs.branchName }}" | Set-Content -Path package.json
 
-      - name: replace version text for dev branches
-        if: ${{ steps.vars.outputs.branchName != env.MainBranch }}
-        shell: pwsh
-        run: (Get-Content -path package.json -Raw) -replace "version patch","version ${{ steps.versionBump.outputs.new_tag }}-${{ steps.vars.outputs.branchName }} --no-git-tag-version -f" | Set-Content -Path package.json
+      # - name: replace version text for dev branches
+      #   if: ${{ steps.vars.outputs.branchName != env.MainBranch }}
+      #   shell: pwsh
+      #   run: (Get-Content -path package.json -Raw) -replace "version patch","version ${{ steps.versionBump.outputs.new_tag }}-${{ steps.vars.outputs.branchName }} --no-git-tag-version -f" | Set-Content -Path package.json
 
       # run npm commands
       - uses: actions/setup-node@v2
