@@ -60,8 +60,7 @@ jobs:
         env:
           DEFAULT_BUMP: ${{ steps.vars.outputs.versionBump }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # PRERELEASE_SUFFIX: ${{ steps.vars.outputs.branchName }}
-          RELEASE_BRANCHES: .* #${{ steps.vars.outputs.branchName }} #${{ env.MainBranch }}
+          RELEASE_BRANCHES: .*
           # TAG_CONTEXT: branch
           WITH_V: false
       - run: echo "New version is ${{ steps.versionBump.outputs.new_tag }}"
