@@ -34,7 +34,7 @@ jobs:
         run: |
           echo ::set-output name=branchName::${GITHUB_REF##*/}
           
-          if [${GITHUB_REF##*/} == ${{ env.MainBranch }}]
+          if ['${GITHUB_REF##*/}'' == '${{ env.MainBranch }}'']
           then
               echo "::set-output name=versionBump::minor"
               echo "::set-output name=prerelease::true"
