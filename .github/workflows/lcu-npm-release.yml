@@ -39,7 +39,7 @@ jobs:
         run: |
           echo ::set-output name=branchName::$BRANCH
           
-          if ['$BRANCH' == '${{ env.MainBranch }}']
+          if ['${{ env.Branch }}' == '${{ env.MainBranch }}']
           then
               echo "::set-output name=versionBump::minor"
           else
