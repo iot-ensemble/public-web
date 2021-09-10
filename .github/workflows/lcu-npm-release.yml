@@ -50,7 +50,7 @@ jobs:
 
       # bump version and push tag
       - name: Bump version and push tag
-        uses: anothrNick/github-tag-action@1.26.0
+        uses: fathym/github-tag-action@master
         id: versionBump
         env:
           DEFAULT_BUMP: ${{ steps.vars.outputs.versionBump }}
