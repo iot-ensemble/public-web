@@ -29,19 +29,14 @@ jobs:
           fetch-depth: '0'
 
       # set variables
-      - name: Set variables a
-        id: branch
-        run: |
-          echo ::set-output name=name::${GITHUB_REF##*/}
-
       - name: Set variables
         id: vars
         run: |
-          branch=${{ steps.branch.outputs.name }}
+          branch=${GITHUB_REF##*/}
 
           echo ::set-output name=branchName::$branch
            
-          if [ $branch -eq ${{ env.MainBranch }} ]
+          if [ "$branch" == "${{ env.MainBranch }}" ]
           then
               echo "::set-output name=versionBump::minor"
           else
