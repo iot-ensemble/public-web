@@ -2,19 +2,19 @@ name: NPM - Release
 
 on:
   push:
-    branches: [main, integration, feature/**]
+    branches: [main,integration,feature/**]
   pull_request:
-    branches: [main, integration, feature/**]
+    branches: [main,integration,feature/**]
 
 env:
   Branches: main,integration,feature/**
   MainBranch: main
   NPMRegistry: https://registry.npmjs.org/
   InstallCommand: npm ci
-  DeployCommand: npm run deploy
+  DeployCommand: npm run build
   Organization: iot-ensemble
   Repository: public-web
-  Output:
+  Output: 
 
 jobs:
   build:
@@ -28,62 +28,36 @@ jobs:
         with:
           fetch-depth: '0'
 
-      # # get branch base
-      # - name: Get Branch Base
-      #   id: branchBase
-      #   uses: andac-ozcan/actions-find-and-replace-string@3
-      #   with:
-      #     source: ${{ github.ref }}
-      #     find: 'ref/heads/'
-      #     replace: ''
-
-      # - run: echo "Starting branch ${{ github.ref }}"
-      # - run: echo "Branch Base ${{ steps.branchBase.outputs.value }}"
-
-      # # get branch adjusted
-      # - name: Get Branch Adjusted
-      #   id: branchAdjusted
-      #   uses: andac-ozcan/actions-find-and-replace-string@3
-      #   with:
-      #     source: ${{ steps.branchBase.outputs.value }}
-      #     find: '/'
-      #     replace: '-'
-          
-      # - run: echo "Branch Adjusted ${{ steps.branchAdjusted.outputs.value }}"
-
       # set variables
       - name: Set variables
         id: vars
         run: |
-          echo ::set-output name=branchName::$BRANCH
-
-          toReplace='refs/head/'
-          replaceWith=''
-
-          echo ::set-output name=a::${BRANCH/$toReplace/$replaceWith}
-
+          echo ::set-output name=branchName::${GITHUB_REF##*/}
+          
+          if ['$BRANCH' == '$MAIN_BRANCH']
+          then
+              echo "::set-output name=versionBump::minor"
+          else
+              echo "::set-output name=versionBump::patch"
+          fi
         env:
-          BRANCH: ${{ github.ref }}
-
-      - name: Variable Checks
-        run: |
-          echo "Current branch is ${{ steps.vars.outputs.branchName }}"
-          echo "a is ${{ steps.vars.outputs.a }}"
-          echo "Version bump type is ${{ steps.vars.outputs.versionBump }}"
+          BRANCH: ${{ steps.vars.outputs.branchName }}
+          MAIN_BRANCH: ${{ env.MainBranch }}
+      - run: echo "Current branch is ${{ steps.vars.outputs.branchName }}"
+      - run: echo "Version bump type is ${{ steps.vars.outputs.versionBump }}"
 
       # bump version and push tag
       - name: Bump version and push tag
         uses: anothrNick/github-tag-action@1.26.0
         id: versionBump
         env:
-          DEFAULT_BUMP: ${{ steps.vars.outputs.versionBump }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PRERELEASE_SUFFIX: ${{ steps.vars.outputs.branchName }}
-          RELEASE_BRANCHES: ${{ env.MainBranch }}
-          TAG_CONTEXT: branch
-          PRE_RELEASE: ${{ steps.vars.outputs.prerelease }}
+          RELEASE_BRANCHES: ${{ steps.vars.outputs.branchName }}
+          DEFAULT_BUMP: ${{ steps.vars.outputs.versionBump }}
           WITH_V: false
-      - run: echo "New version is ${{ steps.versionBump.outputs.new_tag }}"
+
+      - name: Echo current version
+        run: echo "The new version is ${{ steps.versionBump.outputs.new_tag }}"
 
       # replace text in package.json for main branch
       - name: replace version text for main branch
