@@ -489,16 +489,16 @@
 
       hwCarousel.Mount('.hardware');
 
+      hwCarousel.SlideInterval(4000);
+
       const swCarousel = new Carousel();
 
-            hwCarousel.Mount('.hardware');
-            hwCarousel.SlideInterval(4000);
       swCarousel.Mount('.software');
+
+      swCarousel.SlideInterval(7000);
 
       const lazySrcs = new LazySource();
 
-            swCarousel.Mount('.software');
-            swCarousel.SlideInterval(7000);
       lazySrcs.Mount('[data-src]');
     </script>
 
