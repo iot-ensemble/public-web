@@ -121,6 +121,10 @@ export class Carousel {
         }
     }
 
+    public SlideInterval(interval: number): void{
+        setInterval(this.moveNext.bind(this), interval);
+    }
+
     //  Helpers
     /**
      * Disable isMoving for the same duration as our transition (500ms)
