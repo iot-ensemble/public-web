@@ -1,4 +1,22 @@
 ---
 label: Pairings
 hide_body: true
-fields: []
+fields:
+- name: InputOutput
+  type: text
+  config:
+    required: false
+  label: InputOutput
+  description: The input output pairing.
+- name: Abstract
+  type: text
+  config:
+    required: false
+  label: Abstract
+  description: Abstract
+- name: Description
+  type: text
+  config:
+    required: false
+  label: Description
+  description: Description

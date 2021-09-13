@@ -1,31 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <!-- HTML Setup -->
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="shortcut icon" href="./static/favicon.ico" />
-        <base href="/" />
+  <head>
+    <!-- HTML Setup -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" href="./static/favicon.ico" />
+    <base href="/" />
 
-        <!-- SEO Setup -->
-        <title>IoT Ensemble | Connect. Combine. Code.</title>
-        <meta
-            name="description"
-            content="IoT projects to get you going in minutes, not weeks or months."
-        />
+    <!-- SEO Setup -->
+    <title>IoT Ensemble | Connect. Combine. Code.</title>
+    <meta
+      name="description"
+      content="IoT projects to get you going in minutes, not weeks or months."
+    />
 
-        <!-- Stylesheets -->
-        <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/icon?family=Material+Icons"
-        />
+    <!-- Stylesheets -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
 
-        <link rel="stylesheet" href="./static/css/app.css" />
-
-        <script type="module" src="./packages/es/index.js"></script>
-    </head>
-    <body>
-        <!-- <div id='root' style="height: 200px; width: 300px; background-color: cadetblue;"></div>
+    <link rel="stylesheet" href="./static/css/app.css" />
+  </head>
+  <body>
+    <!-- <div id='root' style="height: 200px; width: 300px; background-color: cadetblue;"></div>
         <script id="sjs-load-test" type="module">
             import { ComponentTest } from './packages/es/index.js';
             const componentTest = new ComponentTest();
@@ -466,42 +464,49 @@
                     </landing-pages-info-cards-element> -->
                 </section>
             </div>
+        
 
-            <footer>
-                <div class="footer-container">
-                    <a href="https://www.microsoft.com" target="_blank" class="ms-gold-partner">
-                        <img  src="./static/images/third-party/microsoft/MS-gold-cloud-platform.gif"/>
-                      </a>
-                    <div class="copyright">
-                        <div class="container">
-                            Copyright © 2021
-                            <span class="redacted">Fathym, Inc</span>
-                        </div>
-                    </div>
-                </div>
-            </footer>
+      <footer>
+        <div class="footer-container">
+            <a href="https://www.microsoft.com" target="_blank" class="ms-gold-partner">
+                <img  src="./static/images/third-party/microsoft/MS-gold-cloud-platform.gif"/>
+            </a>
+          <div class="copyright">
+            <div class="container">
+              Copyright © 2021
+              <span class="redacted">Fathym, Inc</span>
+            </div>
+          </div>
         </div>
+      </footer>
+    </div>
 
-        <!-- Carousel -->
-        <script id="sjs-carousel" type="module">
-            import { Carousel } from './packages/es/index.js';
+    <!-- Carousel -->
+    <script id="sjs-carousel" defer type="module">
+      import { Carousel, LazySource } from './packages/es/index.js';
 
-            const hwCarousel = new Carousel();
+      const hwCarousel = new Carousel();
+
+      hwCarousel.Mount('.hardware');
+
+      const swCarousel = new Carousel();
 
             hwCarousel.Mount('.hardware');
             hwCarousel.SlideInterval(4000);
+      swCarousel.Mount('.software');
 
-            const swCarousel = new Carousel();
+      const lazySrcs = new LazySource();
 
             swCarousel.Mount('.software');
             swCarousel.SlideInterval(7000);
-        </script>
+      lazySrcs.Mount('[data-src]');
+    </script>
 
-        <!-- Recipes -->
-        <!-- <script id="sjs-startup" type="module">
+    <!-- Recipes -->
+    <!-- <script id="sjs-startup" type="module">
 
             import { ExpandSelect } from './packages/es/index.js';
 
         </script> -->
-    </body>
+  </body>
 </html>
