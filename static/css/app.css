@@ -178,6 +178,7 @@ header nav .trigger {
 .memo {
     color: var(--theme-black);
     font-family: 'Black Ops One', cursive;
+    display: none;
 }
 
 .memo .container {
@@ -201,6 +202,7 @@ header nav .trigger {
 
 .outgrown, .device-to-solution {
     text-align: center;
+    display: none;
 }
 
 .partnerverse, .outgrown, .device-to-solution {
