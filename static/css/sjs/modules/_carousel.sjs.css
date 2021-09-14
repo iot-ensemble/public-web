@@ -2,6 +2,11 @@
     overflow: hidden;
 }
 
+.carousel-text{
+  margin: 30px 30px 0px 30px;
+  color:black;
+}
+
 .sjs-carousel {
     transform-style: preserve-3d;
 }
@@ -53,11 +58,11 @@
 }
 
 .sjs-carousel-button-prev {
-  top:-35px;
+  top:-54px;
 }
 
 .sjs-carousel-button-next {
-  bottom:-30px;
+  bottom:-45px;
 }
 
 .sjs-carousel-button-prev::after,
