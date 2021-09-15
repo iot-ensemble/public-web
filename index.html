@@ -91,44 +91,51 @@
 
                         <div class="recipe-builder">
                             <div class="partner-carousel-container" id="hardware-carousel-container">
-
-                            <div id="hardware" class="hardware">
-                                <div class="sjs-carousel-button-next"></div>
-
-                                <!-- 
-                                    * Use a module or JS to build out a template - user defined
-
-                                    * Four ways to setup a template - 
-                                    * 1. Add HTML here
-                                    * 2. Convert HTML to a string and add it to the innerHTML of a parent element
-                                    * 3. Render it out using JS - CarouselTemplate.js is an example, can be external JS file too
-                                    * 4. Export HTML file in module and display it - working on that 
-                                    * (componenet/loaderTest/template.html) 
-                                 -->
-                                <script id="sjs-carousel" type="module">
-                                    import { ComponentTest } from './packages/es/index.js';
-                                    const componentTest = new ComponentTest();
-                                    const el =
-                                        document.getElementById('hardware');
-
-                                    el.innerHTML +=
-                                        componentTest.ComponentAsString();
-                                </script>
-
-                                <div class="option sjs-carousel-item">
-                                    <img
-                                    class="carousel-img"
-                                        src="./static/images/third-party/logos/Sparkfun.png"
-                                    />
-                                    <p class="carousel-text"> Sparkfun Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum enim fugit assumenda doloremque quos animi dicta culpa nostrum neque a, voluptate, tempore maiores? Dicta cupiditate animi dolorem voluptate vero amet!</p>
-
-                                </div>
-
+                                <!-- sjs-carousel-button-next -->
                                 
 
-                                <div class="sjs-carousel-button-prev"></div>
+                                <div id="hardware" class="hardware">
+                                    
+                            
+                                    <!-- 
+                                                                * Use a module or JS to build out a template - user defined
+                            
+                                                                * Four ways to setup a template - 
+                                                                * 1. Add HTML here
+                                                                * 2. Convert HTML to a string and add it to the innerHTML of a parent element
+                                                                * 3. Render it out using JS - CarouselTemplate.js is an example, can be external JS file too
+                                                                * 4. Export HTML file in module and display it - working on that 
+                                                                * (componenet/loaderTest/template.html) 
+                                                             -->
+                                    <script id="sjs-carousel" type="module">
+                                        import { ComponentTest } from './packages/es/index.js';
+                                        const componentTest = new ComponentTest();
+                                        const el =
+                                            document.getElementById('hardware');
 
-                            </div>
+                                        el.innerHTML +=
+                                            componentTest.ComponentAsString();
+                                    </script>
+                            
+                                    <div class="option sjs-carousel-item">
+                                        <img class="carousel-img" src="./static/images/third-party/logos/Sparkfun.png" />
+                                        <p class="carousel-text"> Sparkfun Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum enim fugit
+                                            assumenda doloremque quos animi dicta culpa nostrum neque!</p>
+                            
+                                    </div>
+
+                                    <div class="caret-button">
+                                        <span class="sjs-carousel-button-next material-icons icon md">expand_more</span>
+                                    </div>
+                            
+                            
+                            
+                                    <div class="caret-button">
+                                        <span class="sjs-carousel-button-prev material-icons icon md">expand_less</span>
+                                    </div>
+                                </div>
+                                
+
                             </div>
 
                             <div class="arrow-hw arrow">
@@ -143,7 +150,7 @@
                                     src="./static/images/Fathym-logo2-black.png"
                                     src="Fathym"
                                 />
-                                <p class="carousel-text"> Fathym Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum enim fugit assumenda doloremque quos animi dicta culpa nostrum neque a, voluptate, tempore maiores? Dicta cupiditate animi dolorem voluptate vero amet!</p>
+                                <p class="carousel-text"> Fathym Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum enim fugit assumenda doloremque quos animi dicta culpa nostrum neque!</p>
 
                             </div>
                             </div>
@@ -157,7 +164,8 @@
                             <div class="partner-carousel-container" id="software-carousel-container">
 
                             <div id="software" class="software">
-                                <div class="sjs-carousel-button-next"></div>
+
+                                
 
 
                                 <div class="option sjs-carousel-item">
@@ -166,7 +174,7 @@
                                         id="D3js"
                                         src="./static/images/third-party/logos/D3js.png"
                                     />
-                                    <p class="carousel-text"> D3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum enim fugit assumenda doloremque quos animi dicta culpa nostrum neque a, voluptate, tempore maiores? Dicta cupiditate animi dolorem voluptate vero amet!</p>
+                                    <p class="carousel-text"> D3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum enim fugit assumenda doloremque quos animi dicta culpa nostrum neque!</p>
                                 </div>
 
                                 <div class="option sjs-carousel-item">
@@ -175,7 +183,7 @@
                                         id="Grafana"
                                         src="./static/images/third-party/logos/Grafana.png"
                                     />
-                                    <p class="carousel-text">Grafana Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum enim fugit assumenda doloremque quos animi dicta culpa nostrum neque a, voluptate, tempore maiores? Dicta cupiditate animi dolorem voluptate vero amet!</p>
+                                    <p class="carousel-text">Grafana Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum enim fugit assumenda doloremque quos animi dicta culpa nostrum neque!</p>
 
                                 </div>
 
@@ -185,7 +193,7 @@
                                         id="IFTTT"
                                         src="./static/images/third-party/logos/IFTTT.png"
                                     />
-                                    <p class="carousel-text"> IFTTT Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum enim fugit assumenda doloremque quos animi dicta culpa nostrum neque a, voluptate, tempore maiores? Dicta cupiditate animi dolorem voluptate vero amet!</p>
+                                    <p class="carousel-text"> IFTTT Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum enim fugit assumenda doloremque quos animi dicta culpa nostrum neque!</p>
 
                                 </div>
 
@@ -195,7 +203,7 @@
                                         id="MSsql"
                                         src="./static/images/third-party/logos/MSsql.png"
                                     />
-                                    <p class="carousel-text">MSsql Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum enim fugit assumenda doloremque quos animi dicta culpa nostrum neque a, voluptate, tempore maiores? Dicta cupiditate animi dolorem voluptate vero amet!</p>
+                                    <p class="carousel-text">MSsql Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum enim fugit assumenda doloremque quos animi dicta culpa nostrum neque!</p>
 
                                 </div>
 
@@ -205,7 +213,7 @@
                                         id="Powerbi"
                                         src="./static/images/third-party/logos/Powerbi.png"
                                     />
-                                    <p class="carousel-text">PowerBi Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum enim fugit assumenda doloremque quos animi dicta culpa nostrum neque a, voluptate, tempore maiores? Dicta cupiditate animi dolorem voluptate vero amet!</p>
+                                    <p class="carousel-text">PowerBi Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum enim fugit assumenda doloremque quos animi dicta culpa nostrum neque!</p>
 
                                 </div>
 
@@ -215,7 +223,7 @@
                                         id="Tableau"
                                         src="./static/images/third-party/logos/Tableau.png"
                                     />
-                                    <p class="carousel-text"> Tableau Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum enim fugit assumenda doloremque quos animi dicta culpa nostrum neque a, voluptate, tempore maiores? Dicta cupiditate animi dolorem voluptate vero amet!</p>
+                                    <p class="carousel-text"> Tableau Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum enim fugit assumenda doloremque quos animi dicta culpa nostrum neque!</p>
 
                                 </div>
 
@@ -225,12 +233,18 @@
                                         id="Zapier"
                                         src="./static/images/third-party/logos/Zapier.png"
                                     />
-                                    <p class="carousel-text">Zapier Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum enim fugit assumenda doloremque quos animi dicta culpa nostrum neque a, voluptate, tempore maiores? Dicta cupiditate animi dolorem voluptate vero amet!</p>
+                                    <p class="carousel-text">Zapier Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum enim fugit assumenda doloremque quos animi dicta culpa nostrum neque!</p>
 
                                 </div>
 
+                                <div class="caret-button">
+                                    <span class="sjs-carousel-button-next material-icons icon md">expand_more</span>
+                                </div>
+
                                 
-                                <div class="sjs-carousel-button-prev"></div>
+                                <div class="caret-button">
+                                    <span class="sjs-carousel-button-prev material-icons icon md">expand_less</span>
+                                </div>
 
                             </div>
 

@@ -2,9 +2,41 @@
     overflow: hidden;
 }
 
+.partner-carousel-container{
+  /* min-width: 300px; */
+  max-width: 300px;
+  height: 300px;
+}
+
+
+
+#hardware-carousel-container{
+  background-color: #9CD8D799;
+  border-radius: 3px 0px 0px 3px
+}
+
+#fathym-carousel-container{
+  background-color: #67C7C599;
+}
+
+#software-carousel-container{
+  background-color: #4A918E99;
+  border-radius: 0px 3px 3px 0px
+
+}
+
+.carousel-img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 22px
+}
+
+
 .carousel-text{
   margin: 30px 30px 0px 30px;
   color:black;
+  height: 95px;
 }
 
 .sjs-carousel {
@@ -46,38 +78,67 @@
 .sjs-carousel-button-prev,
 .sjs-carousel-button-next {
   position: absolute;
-  left: calc(50% - 1.5rem / 2);
-  width: 1.5rem;
-  height: 1.5rem;
-  background-color: #fff;
+  left: calc(50% - 3rem / 2);
+  z-index: 1001;
+  /* width: 1.5rem;
+  height: 1.5rem; */
+  /* background-color: #fff; */
   /* transform: translateY(-50%); */
-  border-radius: 50%;
-  cursor: pointer; 
-  z-index: 1001; 
-  border: 1px solid black;
+  /* border-radius: 50%; */
+  /* cursor: pointer; 
+    */
+  /* border: 1px solid black; */
 }
 
 .sjs-carousel-button-prev {
-  top:-54px;
+  top:-55px;
 }
 
 .sjs-carousel-button-next {
-  bottom:-45px;
+  bottom:-62px;
 }
 
-.sjs-carousel-button-prev::after,
+/* .sjs-carousel-button-prev::after,
 .sjs-carousel-button-next::after {
   content: " ";
-  position: absolute;
-  width: 5px;
-  height: 5px;
+  position: relative;
+  width: 25px;
+  height: 25px;
   top: 50%;
-  left: 50%;
-  border-right: 2px solid black;
-  border-bottom: 2px solid black;
-  transform: translate(-50%, -50%) rotate(225deg);
+  left: 50%; */
+  /* border-right: 2px solid black; */
+  /* border-bottom: 2px solid black; */
+  /* transform: translate(-50%, -50%) rotate(225deg); */
+/* } */
+
+/* .sjs-carousel-button-next::after {
+  transform: translate(-50%, -50%) rotate(-315deg);
+} */
+
+.caret-button{
+  text-align: center;
+  z-index: 1001;
+
+}
+/* .caret-button:hover{
+  cursor: pointer;
+} */
+
+.sjs-carousel-button-next,
+.sjs-carousel-button-prev{
+cursor: pointer;
 }
 
-.sjs-carousel-button-next::after {
-  transform: translate(-50%, -50%) rotate(-320deg);
+@media only screen and (max-width: 600px) {
+  .partner-carousel-container{
+      /* min-width: 300px; */
+      max-width: 300px;
+      height: 500px;
+  }
+  .carousel-text{
+    margin: 30px 30px 0px 30px;
+    color:black;
+    height: 300px;
+  }
 }
+

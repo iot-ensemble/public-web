@@ -137,38 +137,7 @@ header nav .trigger {
     margin: calc(var(--margin-step) * 4) calc(var(--margin-step) * 2);
 }
 
-.partner-carousel-container{
-    min-width: 300px;
-    max-width: 300px;
-    height: 300px;
-}
 
-
-#hardware-carousel-container{
-    background-color: #9CD8D799;
-    border-radius: 3px 0px 0px 3px
-}
-
-#fathym-carousel-container{
-    background-color: #67C7C599;
-}
-
-#software-carousel-container{
-    background-color: #4A918E99;
-    border-radius: 0px 3px 3px 0px
-
-}
-
-
-
-
-
-.carousel-img{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 10px
-}
 
 /* .partners .container .recipe-builder > * {
     margin: var(--margin-step);
@@ -180,7 +149,7 @@ header nav .trigger {
 
 .partners .container .recipe-builder .option img {
     height: 64px;
-    margin-top: 42px;
+    margin-top: 53px;
 }
 
 .arrow{
