@@ -425,7 +425,7 @@ footer {
     }
 }
 
-@media (max-width: 370px) {
+@media (max-width: 376px) {
     .partners .container .recipe-builder {
         margin: calc(var(--margin-step) * 4) calc(var(--margin-step) / 4);
     }

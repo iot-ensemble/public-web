@@ -256,7 +256,7 @@ cursor: pointer;
     left: 87%;
 }
 }
-@media (max-width: 370px) {
+@media (max-width: 376px) {
   .partner-carousel-container{
     min-width: 110px;
     max-width: 110px;
