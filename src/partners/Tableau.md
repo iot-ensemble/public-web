@@ -1,7 +1,7 @@
 ---
 Type: Output
-Name: D3js
-Description: D3js description to come
-Image: "/uploads/D3js.png"
+Name: Tableau
+Description: Tableau description to come
+Image: "/uploads/Tableau.png"
 
 ---

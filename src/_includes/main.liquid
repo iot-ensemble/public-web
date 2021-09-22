@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- HTML Setup -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" href="./static/favicon.ico" />
+    <base href="/" />
+
+    <!-- SEO Setup -->
+    <title>IoT Ensemble | Connect. Combine. Code.</title>
+    <meta
+      name="description"
+      content="IoT projects to get you going in minutes, not weeks or months."
+    />
+
+    <!-- Stylesheets -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+
+    <link rel="stylesheet" href="./static/css/app.css" /> 
+  </head>
+  <body>
+    <div class="page">
+
+        <header>
+            <img class="logo" src="./static/images/logo.svg" alt="Fathym" />
+
+            <h2 class="title">IoT Ensemble</h2>
+
+            <div class="flex-filler"></div>
+
+            <nav>
+                <a href="/blog">Blog</a>
+
+                <a href="/docs">Docs</a>
+
+                <!-- <a href="/combine">Pricing</a> -->
+
+                <a href="/dashboard" class="accent">Get Started for Free</a>
+
+                <a
+                    href="https://github.com/iot-ensemble/lcu-device-data-flow"
+                    target="_blank"
+                >
+                    <img
+                        class="icon sm"
+                        src="./static/images/third-party/github-mark/GitHub-Mark-Light-64px.png"
+                        alt="Fathym"
+                    />
+                </a>
+
+                <div class="trigger">
+                    <span class="material-icons">menu</span>
+                </div>
+            </nav>
+
+        </header>
+
+        {{ content | safe }}
+
+    </div>
+  </body>
+</html>
