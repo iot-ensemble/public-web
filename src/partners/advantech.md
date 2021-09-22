@@ -2,6 +2,6 @@
 Type: Input
 Name: Advantech
 Description: Advantech
-Image: "/uploads/advantech-logo.png"
+Image: "/uploads/advantech.png"
 
 ---
