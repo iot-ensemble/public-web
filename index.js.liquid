@@ -100,6 +100,25 @@ layout: main.liquid
                                 
 
                                 <div id="hardware" class="hardware">
+
+                                  <!-- eleventy attempt -->
+                                {% for partner in collections.partners %}
+                                {% if partner.Type == "Input" %}
+
+                                <div class="option sjs-carousel-item">
+                                    <img 
+                                        class="carousel-img"
+                                        id="{{ partner.Name }}"
+                                        src="{{ partner.Image }}"
+                                        title="{{ partner.Name }}"
+                                    />
+                                    <p class="carousel-text">{{ partner.Description }}</p>
+                                </div>
+
+                                {% endif %}
+                                {% endfor %}
+
+                                <!-- eleventy attempt -->
                                     
                             
                                     <!-- 
@@ -112,7 +131,7 @@ layout: main.liquid
                                                                 * 4. Export HTML file in module and display it - working on that 
                                                                 * (componenet/loaderTest/template.html) 
                                                              -->
-                                    <script id="sjs-carousel" type="module">
+                                    <!-- <script id="sjs-carousel" type="module">
                                         import { ComponentTest } from './packages/es/index.js';
                                         const componentTest = new ComponentTest();
                                         const el =
@@ -127,7 +146,7 @@ layout: main.liquid
                                         <p class="carousel-text"> Sparkfun Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum enim fugit
                                             assumenda doloremque quos animi dicta culpa nostrum neque!</p>
                             
-                                    </div>
+                                    </div> -->
 
                                     <div class="caret-button">
                                         <span class="sjs-carousel-button-next material-icons icon md">expand_more</span>
@@ -179,6 +198,7 @@ layout: main.liquid
                                     />
                                     <p class="carousel-text">{{ partner.Description }}</p>
                                 </div>
+
                                 {% endif %}
                                 {% endfor %}
 
@@ -187,7 +207,7 @@ layout: main.liquid
                                 
 
 
-                                <!-- <div class="option sjs-carousel-item">
+                                <!--<div class="option sjs-carousel-item">
                                     <img 
                                         class="carousel-img"
                                         id="D3js"

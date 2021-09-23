@@ -5,7 +5,7 @@
   "main": "./packages/cjs/common.js",
   "scripts": {
     "test": "jest",
-    "build": "concurrently \"npm run build:es\" \"npm run build:cjs\"",
+    "build": "concurrently \"npm run build:es\" \"npm run build:cjs\" \"eleventy\"",
     "build:eleventy": "eleventy",
     "build:es": "tsc -p tsconfig.es.json",
     "build:cjs": "tsc -p tsconfig.cjs.json",
