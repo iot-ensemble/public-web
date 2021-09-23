@@ -1,4 +1,5 @@
 ---
+Tags: partners
 Type: Output
 Name: MSsql
 Description: MSsql description to come

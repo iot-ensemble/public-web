@@ -1,4 +1,5 @@
 ---
+Tags: partners
 Type: Input
 Name: Mikroe
 Description: Mikroe

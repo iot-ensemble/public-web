@@ -1,4 +1,5 @@
 ---
+Tags: partners
 Type: Output
 Name: Zapier
 Description: Zapier description to come

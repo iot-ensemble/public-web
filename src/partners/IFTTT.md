@@ -1,4 +1,5 @@
 ---
+Tags: partners
 Type: Output
 Name: IFTTT
 Description: IFTTT description to come

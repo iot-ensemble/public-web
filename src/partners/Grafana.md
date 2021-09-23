@@ -1,4 +1,5 @@
 ---
+Tags: partners
 Type: Output
 Name: Grafana
 Description: Grafana description to come

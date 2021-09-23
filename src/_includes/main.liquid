@@ -1,20 +1,25 @@
+---
+title: Default Title
+---
+
 <!DOCTYPE html>
+
 <html lang="en">
   <head>
-    <!-- HTML Setup -->
+    {% comment %} <!-- HTML Setup --> {% endcomment %}
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="shortcut icon" href="./static/favicon.ico" />
     <base href="/" />
 
-    <!-- SEO Setup -->
-    <title>IoT Ensemble | Connect. Combine. Code.</title>
+    {% comment %} <!-- SEO Setup --> {% endcomment %}
+    <title>{{ title }}</title>
     <meta
       name="description"
       content="IoT projects to get you going in minutes, not weeks or months."
     />
 
-    <!-- Stylesheets -->
+    {% comment %} <!-- Stylesheets --> {% endcomment %}
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -37,7 +42,7 @@
 
                 <a href="/docs">Docs</a>
 
-                <!-- <a href="/combine">Pricing</a> -->
+                 {% comment %} <a href="/combine">Pricing</a> {% endcomment %}
 
                 <a href="/dashboard" class="accent">Get Started for Free</a>
 
