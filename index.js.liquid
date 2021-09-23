@@ -152,8 +152,6 @@ layout: main.liquid
                                         <span class="sjs-carousel-button-next material-icons icon md">expand_more</span>
                                     </div>
                             
-                            
-                            
                                     <div class="caret-button">
                                         <span class="sjs-carousel-button-prev material-icons icon md">expand_less</span>
                                     </div>
@@ -187,19 +185,19 @@ layout: main.liquid
                             <div id="software" class="software">
                                 <!-- eleventy attempt -->
                                 {% for partner in collections.partners %}
-                                {% if partner.Type == "Output" %}
+                                    {% if partner.Type == "Output" %}
 
-                                <div class="option sjs-carousel-item">
-                                    <img 
-                                        class="carousel-img"
-                                        id="{{ partner.Name }}"
-                                        src="{{ partner.Image }}"
-                                        title="{{ partner.Name }}"
-                                    />
-                                    <p class="carousel-text">{{ partner.Description }}</p>
-                                </div>
+                                    <div class="option sjs-carousel-item">
+                                        <img 
+                                            class="carousel-img"
+                                            id="{{ partner.Name }}"
+                                            src="{{ partner.Image }}"
+                                            title="{{ partner.Name }}"
+                                        />
+                                        <p class="carousel-text">{{ partner.Description }}</p>
+                                    </div>
 
-                                {% endif %}
+                                    {% endif %}
                                 {% endfor %}
 
                                 <!-- eleventy attempt -->
