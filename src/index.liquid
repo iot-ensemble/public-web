@@ -35,22 +35,22 @@ title: IoT Ensemble | Connect. Combine. Code.
                                 <div id="hardware" class="hardware">
 
                                   {% comment %} <!-- eleventy attempt --> {% endcomment %}
-                                  <div>{{collections.partners}}</div>
-                                {% for partner in collections.partners %}
-                                {% if partner.Type == "Input" %}
+                                  {% comment %} <div>{{collections.partners}}</div> {% endcomment %}
+                                {% for partner in collections.partners -%}
+                                {% if partner.data.Type == "Input" %}
 
                                 <div class="option sjs-carousel-item">
                                     <img 
                                         class="carousel-img"
-                                        id="{{ partner.Name }}"
-                                        src="{{ partner.Image }}"
-                                        title="{{ partner.Name }}"
+                                        id="{{ partner.data.Name }}"
+                                        src="{{ partner.data.Image }}"
+                                        title="{{ partner.data.Name }}"
                                     />
-                                    <p class="carousel-text">{{ partner.Description }}</p>
+                                    <p class="carousel-text">{{ partner.data.Description }}</p>
                                 </div>
 
                                 {% endif %}
-                                {% endfor %}
+                                {% endfor -%}
 
                                 {% comment %} <!-- eleventy attempt --> {% endcomment %}
                                     
@@ -119,16 +119,16 @@ title: IoT Ensemble | Connect. Combine. Code.
                             <div id="software" class="software">
                                 {% comment %} <!-- eleventy attempt --> {% endcomment %}
                                 {% for partner in collections.partners %}
-                                    {% if partner.Type == "Output" %}
+                                    {% if partner.data.Type == "Output" %}
 
                                     <div class="option sjs-carousel-item">
                                         <img 
                                             class="carousel-img"
-                                            id="{{ partner.Name }}"
-                                            src="{{ partner.Image }}"
-                                            title="{{ partner.Name }}"
+                                            id="{{ partner.data.Name }}"
+                                            src="{{ partner.data.Image }}"
+                                            title="{{ partner.data.Name }}"
                                         />
-                                        <p class="carousel-text">{{ partner.Description }}</p>
+                                        <p class="carousel-text">{{ partner.data.Description }}</p>
                                     </div>
 
                                     {% endif %}

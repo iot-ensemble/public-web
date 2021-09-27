@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "build": "concurrently \"npm run build:es\" \"npm run build:cjs\" \"npm run build:eleventy\"",
-    "build:eleventy": "eleventy --watch",
+    "build:eleventy": "eleventy",
     "build:es": "tsc -p tsconfig.es.json",
     "build:cjs": "tsc -p tsconfig.cjs.json",
     "deploy": "npm version patch && npm run deploy:all",
