@@ -34,8 +34,7 @@ title: IoT Ensemble | Connect. Combine. Code.
 
                                 <div id="hardware" class="hardware">
 
-                                  {% comment %} <!-- eleventy attempt --> {% endcomment %}
-                                  {% comment %} <div>{{collections.partners}}</div> {% endcomment %}
+                                  {% comment %} eleventy {% endcomment %}
                                 {% for partner in collections.partners -%}
                                 {% if partner.data.Type == "Input" %}
 
@@ -52,7 +51,7 @@ title: IoT Ensemble | Connect. Combine. Code.
                                 {% endif %}
                                 {% endfor -%}
 
-                                {% comment %} <!-- eleventy attempt --> {% endcomment %}
+                                {% comment %} eleventy attempt {% endcomment %}
                                     
                             
                                     {% comment %} <!-- 
@@ -117,7 +116,6 @@ title: IoT Ensemble | Connect. Combine. Code.
                             <div class="partner-carousel-container" id="software-carousel-container">
 
                             <div id="software" class="software">
-                                {% comment %} <!-- eleventy attempt --> {% endcomment %}
                                 {% for partner in collections.partners %}
                                     {% if partner.data.Type == "Output" %}
 
@@ -133,87 +131,6 @@ title: IoT Ensemble | Connect. Combine. Code.
 
                                     {% endif %}
                                 {% endfor %}
-
-                                {% comment %} <!-- eleventy attempt --> {% endcomment %}
-
-                                
-
-
-                                {% comment %} <!--<div class="option sjs-carousel-item">
-                                    <img 
-                                        class="carousel-img"
-                                        id="D3js"
-                                        src="./static/images/third-party/logos/D3js.png"
-                                        title="D3js"
-                                    />
-                                    <p class="carousel-text"> D3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum enim fugit assumenda doloremque quos animi dicta culpa nostrum neque!</p>
-                                </div>
-
-                                <div class="option sjs-carousel-item">
-                                    <img
-                                    class="carousel-img"
-                                        id="Grafana"
-                                        src="./static/images/third-party/logos/Grafana.png"
-                                        title="Grafana"
-                                    />
-                                    <p class="carousel-text">Grafana Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum enim fugit assumenda doloremque quos animi dicta culpa nostrum neque!</p>
-
-                                </div>
-
-                                <div class="option sjs-carousel-item">
-                                    <img
-                                    class="carousel-img"
-                                        id="IFTTT"
-                                        src="./static/images/third-party/logos/IFTTT.png"
-                                        title="IFTTT"
-                                    />
-                                    <p class="carousel-text"> IFTTT Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum enim fugit assumenda doloremque quos animi dicta culpa nostrum neque!</p>
-
-                                </div>
-
-                                <div class="option sjs-carousel-item">
-                                    <img
-                                    class="carousel-img"
-                                        id="MSsql"
-                                        src="./static/images/third-party/logos/MSsql.png"
-                                        title="Microsoft SQL"
-                                    />
-                                    <p class="carousel-text">MSsql Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum enim fugit assumenda doloremque quos animi dicta culpa nostrum neque!</p>
-
-                                </div>
-
-                                <div class="option sjs-carousel-item">
-                                    <img
-                                    class="carousel-img"
-                                        id="Powerbi"
-                                        src="./static/images/third-party/logos/Powerbi.png"
-                                        title="Powerbi"
-                                    />
-                                    <p class="carousel-text">PowerBi Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum enim fugit assumenda doloremque quos animi dicta culpa nostrum neque!</p>
-
-                                </div>
-
-                                <div class="option sjs-carousel-item">
-                                    <img
-                                    class="carousel-img"
-                                        id="Tableau"
-                                        src="./static/images/third-party/logos/Tableau.png"
-                                        title="Tableau"
-                                    />
-                                    <p class="carousel-text"> Tableau Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum enim fugit assumenda doloremque quos animi dicta culpa nostrum neque!</p>
-
-                                </div>
-
-                                <div class="option sjs-carousel-item">
-                                    <img
-                                    class="carousel-img"
-                                        id="Zapier"
-                                        src="./static/images/third-party/logos/Zapier.png"
-                                        title="Zapier"
-                                    />
-                                    <p class="carousel-text">Zapier Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum enim fugit assumenda doloremque quos animi dicta culpa nostrum neque!</p>
-
-                                </div> --> {% endcomment %}
 
                                 <div class="caret-button">
                                     <span class="sjs-carousel-button-next material-icons icon md">expand_more</span>
@@ -558,9 +475,8 @@ title: IoT Ensemble | Connect. Combine. Code.
           </div>
         </div>
       </footer>
-    {% comment %} <!-- </div> --> {% endcomment %}
 
-    {% comment %} <!-- Carousel --> {% endcomment %}
+    {% comment %} Carousel {% endcomment %}
     <script id="sjs-carousel" defer type="module">
       import { Carousel, LazySource } from './packages/es/index.js';
 
