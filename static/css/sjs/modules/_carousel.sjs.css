@@ -2,6 +2,62 @@
     overflow: hidden;
 }
 
+.partner-carousel-container{
+  min-width: 300px;
+  max-width: 300px;
+  height: 300px;
+}
+
+
+
+#hardware-carousel-container{
+  background-color: #9CD8D799;
+  border-radius: 3px 0px 0px 3px
+}
+
+#fathym-carousel-container{
+  background-color: #67C7C599;
+}
+
+#software-carousel-container{
+  background-color: #4A918E99;
+  border-radius: 0px 3px 3px 0px
+
+}
+
+.arrow{
+  position: relative;
+  color: #0d413e;
+}
+
+.arrow-icon{
+  font-size: 45px;
+}
+
+.arrow-hw{
+  left: -7%;
+  top: 40%;
+}
+
+.arrow-sw{
+  top: 23.3%;
+  left: 93%;
+}
+
+.carousel-img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -80px
+}
+
+
+.carousel-text{
+  margin: 30px 30px 0px 30px;
+  color:black;
+  height: 95px;
+}
+
 .sjs-carousel {
     transform-style: preserve-3d;
 }
@@ -41,38 +97,190 @@
 .sjs-carousel-button-prev,
 .sjs-carousel-button-next {
   position: absolute;
-  left: calc(50% - 1.5rem / 2);
-  width: 1.5rem;
-  height: 1.5rem;
-  background-color: #fff;
+  left: calc(50% - 3rem / 2);
+  z-index: 1001;
+  /* width: 1.5rem;
+  height: 1.5rem; */
+  /* background-color: #fff; */
   /* transform: translateY(-50%); */
-  border-radius: 50%;
-  cursor: pointer; 
-  z-index: 1001; 
-  border: 1px solid black;
+  /* border-radius: 50%; */
+  /* cursor: pointer; 
+    */
+  /* border: 1px solid black; */
 }
 
 .sjs-carousel-button-prev {
-  top:-35px;
+  top:-55px;
 }
 
 .sjs-carousel-button-next {
-  bottom:-30px;
+  bottom: -62px;
+  position: absolute;
 }
 
-.sjs-carousel-button-prev::after,
+/* .sjs-carousel-button-prev::after,
 .sjs-carousel-button-next::after {
   content: " ";
-  position: absolute;
-  width: 5px;
-  height: 5px;
+  position: relative;
+  width: 25px;
+  height: 25px;
   top: 50%;
-  left: 50%;
-  border-right: 2px solid black;
-  border-bottom: 2px solid black;
-  transform: translate(-50%, -50%) rotate(225deg);
+  left: 50%; */
+  /* border-right: 2px solid black; */
+  /* border-bottom: 2px solid black; */
+  /* transform: translate(-50%, -50%) rotate(225deg); */
+/* } */
+
+/* .sjs-carousel-button-next::after {
+  transform: translate(-50%, -50%) rotate(-315deg);
+} */
+
+.caret-button{
+  text-align: center;
+  z-index: 1001;
+
+}
+/* .caret-button:hover{
+  cursor: pointer;
+} */
+
+.sjs-carousel-button-next,
+.sjs-carousel-button-prev{
+cursor: pointer;
+}
+ /* Standard Breakpoints
+    320px — 480px: Mobile devices
+    481px — 768px: iPads, Tablets
+    769px — 1024px: Small screens, laptops
+    1025px — 1200px: Desktops, large screens
+    1201px and more —  Extra large screens, TV
+    */
+
+@media (max-width: 900px) {
+  .partner-carousel-container{
+      min-width: 250px;
+      max-width: 250px;
+      height: 325px;
+  }
+  .carousel-text{
+    margin: 30px 30px 0px 30px;
+    color:black;
+    height: 300px;
+  }
+
+  .sjs-carousel-button-next {
+    bottom: 105px;
+  }
+  .arrow-hw {
+    left: -8%;
+    top: 40%;
+}
+  .arrow-sw {
+    top: 24.6%;
+    left: 92%;
+}
 }
 
-.sjs-carousel-button-next::after {
-  transform: translate(-50%, -50%) rotate(-320deg);
+@media (max-width: 768px) {
+  .partner-carousel-container{
+      min-width: 200px;
+      max-width: 200px;
+      height: 350px;
+  }
+  .carousel-text{
+    margin: 30px 30px 0px 30px;
+    color:black;
+    height: 300px;
+  }
+
+  .sjs-carousel-button-next {
+    bottom: 77px;
+  }
+
+  .arrow-hw {
+    left: -10%;
+    top: 40%;
 }
+
+  .arrow-sw {
+    top: 25.6%;
+    left: 90%;
+}
+
+}
+
+@media (max-width: 600px) {
+  .partner-carousel-container{
+      min-width: 150px;
+      max-width: 150px;
+      height: 450px;
+  }
+  .carousel-text{
+    margin: 30px 30px 0px 30px;
+    color:black;
+    height: 300px;
+  }
+
+  .sjs-carousel-button-next {
+    bottom: -20px;
+  }
+
+  .arrow-hw {
+    left: -13%;
+    top: 45%;
+}
+.arrow-sw {
+  top: 33.8%;
+  left: 87%;
+}
+
+}
+
+@media (max-width: 480px) {
+  .partner-carousel-container{
+      min-width: 150px;
+      max-width: 150px;
+      height: 300px;
+  }
+  .carousel-text{
+    margin: 30px 30px 0px 30px;
+    color:black;
+    height: 300px;
+    font-size: 12px;
+  }
+  .sjs-carousel-button-next {
+    bottom: 110px;
+  }
+  .arrow-sw {
+    top: 28.3%;
+    left: 87%;
+}
+}
+@media (max-width: 376px) {
+  .partner-carousel-container{
+    min-width: 110px;
+    max-width: 110px;
+    height:350px;
+}
+
+.carousel-text{
+  margin: 30px 30px 0px 30px;
+  color:black;
+  height: 300px;
+  font-size: 11px;
+}
+
+.arrow-sw {
+  top: 30.7%;
+  left: 82%;
+}
+.arrow-hw {
+  left: -18%;
+  top: 45%;
+}
+.sjs-carousel-button-next {
+  bottom: 55px;
+}
+}
+
+
