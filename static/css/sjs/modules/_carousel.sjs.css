@@ -70,7 +70,7 @@
     width: 100%;
     margin: auto;
     z-index: 100;
-    transition: transform 0.5s, opacity 0.5s, z-index 0.5s;
+    transition: transform 0.8s, opacity 0.2s, z-index 0.5s;
 }
 
 .sjs-carousel-item.initial,
