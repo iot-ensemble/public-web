@@ -39,6 +39,11 @@ export class Carousel {
     protected ItemClassName: string;
 
     /**
+     * Interval id for ref
+     */
+    protected IntervalId: any;
+
+    /**
      * Carousel item class
      */
     protected NextButtonClassName: string;
@@ -96,6 +101,8 @@ export class Carousel {
         this.PrevButtonClassName = 'sjs-carousel-button-prev';
 
         this.Slide = 0;
+
+        this.IntervalId = 0;
     }
 
     //  API Methods
@@ -119,6 +126,14 @@ export class Carousel {
 
             this.setClasses();
         }
+    }
+
+    public SlideInterval(interval: number): void{
+        this.IntervalId = setInterval(this.moveNext.bind(this), interval);
+    }
+
+    public StopInterval(){
+        clearInterval(this.IntervalId);
     }
 
     //  Helpers

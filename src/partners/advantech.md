@@ -1,7 +1,7 @@
 ---
 Type: Input
 Name: Advantech
-Description: Advantech
-Image: "/uploads/advantech-logo.png"
+Description: Advantech description coming soon
+Image: "/uploads/advantech.png"
 
 ---
