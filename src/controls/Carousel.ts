@@ -136,13 +136,6 @@ export class Carousel {
         clearInterval(this.IntervalId);
     }
 
-    public GetCurrentSlide(): string{
-        let slide:string = "";
-        this.Slide 
-
-        return slide;
-    }
-
     //  Helpers
     /**
      * Disable isMoving for the same duration as our transition (500ms)
