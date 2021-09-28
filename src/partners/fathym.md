@@ -1,7 +1,8 @@
 ---
-Type: Platform
+Type: ''
 Name: Fathym
-Description: Fathym description coming soon
+Description: Your virtual development team that automates best practices for delivery
+  and scale of IoT applications. Process, store and understand your data in minutes.
 Image: "/uploads/Fathym-logo2-black.png"
 
 ---
