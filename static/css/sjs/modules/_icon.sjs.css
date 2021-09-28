@@ -41,3 +41,46 @@
     height: 128px;
     font-size: 128px;
 }
+
+.thinky-icon{
+    width: 108px;
+    height: 96px;
+}
+
+/* Standard Breakpoints
+    320px — 480px: Mobile devices
+    481px — 768px: iPads, Tablets
+    769px — 1024px: Small screens, laptops
+    1025px — 1200px: Desktops, large screens
+    1201px and more —  Extra large screens, TV
+    */
+    @media (max-width: 900px) {
+        .thinky-icon {
+            width: 98px;
+            height: 86px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .thinky-icon {
+            width: 88px;
+            height: 76px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .thinky-icon {
+            width: 78px;
+            height: 66px;
+        }
+    }
+
+
+@media (max-width: 376px) {
+    .thinky-icon {
+        width: 68px;
+        height: 56px;
+    }
+}
+
+
