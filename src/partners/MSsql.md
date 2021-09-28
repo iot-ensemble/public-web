@@ -1,7 +1,8 @@
 ---
 Type: Output
 Name: MSsql
-Description: MSsql description to come
+Description: A software product with the primary function of storing and retrieving
+  data as requested.
 Image: "/uploads/MSsql.png"
 
 ---
