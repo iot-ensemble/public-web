@@ -6,6 +6,8 @@ module.exports = (config) => {
 
     config.addPassthroughCopy('packages');   
   
+    config.addPassthroughCopy('package.json');   
+  
     //  Change the default folder used by 11ty from root to src
     return {
       dir: {

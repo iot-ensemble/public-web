@@ -5,12 +5,13 @@
   "main": "./packages/cjs/common.js",
   "scripts": {
     "test": "jest",
-    "build": "concurrently \"npm run build:es\" \"npm run build:cjs\" \"npm run build:eleventy\"",
+    "build": "npm run clean && concurrently \"npm run build:es\" \"npm run build:cjs\" && npm run build:eleventy",
     "build:eleventy": "eleventy",
     "build:es": "tsc -p tsconfig.es.json",
     "build:cjs": "tsc -p tsconfig.cjs.json",
+    "clean": "rimraf packages && rimraf _site",
     "deploy": "npm version patch && npm run deploy:all",
-    "deploy:all": "rimraf packages && npm run build && npm publish --access public",
+    "deploy:all": "npm run build && npm publish --access public",
     "test:coverage": "jest --coverage",
     "watch": "npm run watch:es",
     "watch:es": "tsc -p tsconfig.es.json -w",
@@ -47,8 +48,7 @@
   "module": "./packages/es/common.js",
   "files": [
     "data/",
-    "packages/",
-    "static/",
-    "index.html"
+    "_site/",
+    "packages/"
   ]
 }
