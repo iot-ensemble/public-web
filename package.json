@@ -45,8 +45,5 @@
   "dependencies": {
     "@semanticjs/common": "^0.0.17"
   },
-  "module": "./packages/es/common.js",
-  "files": [
-    "_site/"
-  ]
+  "module": "./packages/es/common.js"
 }
