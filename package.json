@@ -47,8 +47,6 @@
   },
   "module": "./packages/es/common.js",
   "files": [
-    "data/",
-    "_site/",
-    "packages/"
+    "_site/"
   ]
 }
