@@ -15,8 +15,8 @@
     "watch": "npm run watch:es",
     "watch:es": "tsc -p tsconfig.es.json -w",
     "watch:cjs": "tsc -p tsconfig.cjs.json -w",
-    "start": "http-server",
-    "start:eleventy": "eleventy --serve"
+    "start:http": "http-server",
+    "start": "eleventy --serve"
   },
   "repository": {
     "type": "git",

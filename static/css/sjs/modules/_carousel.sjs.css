@@ -84,6 +84,10 @@
 .sjs-carousel-item.next {
   z-index: 800;
 }
+/* for the fixed carousel in the partner page*/
+.partner-page-carousel{
+  top:-192px;
+}
 
 /* Move item down */
 .sjs-carousel-item.prev {

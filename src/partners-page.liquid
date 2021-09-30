@@ -1,0 +1,14 @@
+---
+pagination:
+    data: collections.recipes
+    size: 1
+    alias: recipe
+    addAllPagesToCollections: true
+title: Recipes
+permalink: "/{{ recipe.data.Name }}/"
+layout: main.liquid
+
+---
+{% include _fixed-carousel.liquid  %}
+
+<div>Hello new world {{recipe.data.Name}}</div>
