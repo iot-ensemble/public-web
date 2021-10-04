@@ -1,22 +1,23 @@
 {
   "name": "@iot-ensemble/public-web",
-  "version": "0.0.1",
+  "version": "0.0.6",
   "description": "",
   "main": "./packages/cjs/common.js",
   "scripts": {
     "test": "jest",
-    "build": "concurrently \"npm run build:es\" \"npm run build:cjs\" \"npm run build:eleventy\"",
+    "build": "npm run clean && concurrently \"npm run build:es\" \"npm run build:cjs\" && npm run build:eleventy",
     "build:eleventy": "eleventy",
     "build:es": "tsc -p tsconfig.es.json",
     "build:cjs": "tsc -p tsconfig.cjs.json",
+    "clean": "rimraf packages && rimraf _site",
     "deploy": "npm version patch && npm run deploy:all",
-    "deploy:all": "rimraf packages && npm run build && npm publish --access public",
+    "deploy:all": "npm run build && npm publish ./_site --access public",
     "test:coverage": "jest --coverage",
     "watch": "npm run watch:es",
     "watch:es": "tsc -p tsconfig.es.json -w",
     "watch:cjs": "tsc -p tsconfig.cjs.json -w",
-    "start": "http-server",
-    "start:eleventy": "eleventy --serve"
+    "start:http": "http-server",
+    "start": "eleventy --serve"
   },
   "repository": {
     "type": "git",
@@ -44,11 +45,5 @@
   "dependencies": {
     "@semanticjs/common": "^0.0.17"
   },
-  "module": "./packages/es/common.js",
-  "files": [
-    "data/",
-    "packages/",
-    "static/",
-    "index.html"
-  ]
+  "module": "./packages/es/common.js"
 }

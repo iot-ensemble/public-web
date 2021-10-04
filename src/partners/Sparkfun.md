@@ -1,7 +1,9 @@
 ---
 Type: Input
 Name: Sparkfun
-Description: Sparkfun description coming soon
-Image: "/uploads/sparkfun.png"
+Description: Manufactures and sells microcontroller development boards and breakout
+  boards. All products designed and produced by SparkFun are released as open-source
+  hardware.
+Image: "/uploads/Sparkfun.png"
 
 ---
