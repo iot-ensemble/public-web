@@ -1,0 +1,114 @@
+
+<!-- Carousel used in partner recipe page fixed non spining -->
+<section class="partners">
+    <div class="container">
+        {% comment %} <h2>Recipes for Rapid IoT</h2> {% endcomment %}
+
+        <div class="recipe-action-container" id="carousel-action">
+
+            
+    <div class="recipe-builder">
+        <div class="partner-carousel-container" id="hardware-carousel-container">
+
+            <div id="hardware" class="hardware">
+
+                {% for partner in collections.partners -%}
+                {% if partner.data.Name == recipe.data.Hardware %}
+
+                <div class="option sjs-carousel-item partner-page-carousel" id="{{ partner.data.Name }}">
+                    <img class="carousel-img" id="{{ partner.data.Name }}-image" src="{{ partner.data.Image }}"
+                        title="{{ partner.data.Name }}" />
+                    <p class="carousel-text">{{ partner.data.Description }}</p>
+                </div>
+
+                {% endif %}
+                {% endfor -%}
+
+
+                 {% comment %} <div class="caret-button" style="visibility:hidden;">
+                    <span class="sjs-carousel-button-next material-icons icon md">expand_more</span>
+                </div>
+
+                <div class="caret-button" style="visibility:hidden;">
+                    <span class="sjs-carousel-button-prev material-icons icon md">expand_less</span>
+                </div> {% endcomment %}
+            </div>
+
+
+        </div>
+
+
+
+        <div class="partner-carousel-container" id="fathym-carousel-container">
+            <div class="arrow-hw arrow">
+                <span class="material-icons arrow-icon">arrow_forward</span>
+            </div>
+            <div class="arrow-sw arrow">
+                <span class="material-icons arrow-icon">arrow_forward</span>
+            </div>
+            {% for partner in collections.partners %}
+            {% if partner.data.Type == "Platform" %}
+            <div class="thinky">
+                <img class="thinky-icon carousel-img" id="{{ partner.data.Name }}-image" title="{{ partner.data.Name }}"
+                    src="{{ partner.data.Image }}" />
+
+                <p class="carousel-text">{{ partner.data.Description }}</p>
+            </div>
+            {% endif %}
+            {% endfor %}
+
+        </div>
+
+
+
+        <div class="partner-carousel-container" id="software-carousel-container">
+
+            <div id="software" class="software">
+                {% for partner in collections.partners %}
+                {% if partner.data.Name == recipe.data.Software %}
+
+                <div class="option sjs-carousel-item partner-page-carousel" id="{{ partner.data.Name }}">
+                    <img class="carousel-img" id="{{ partner.data.Name }}-image" src="{{ partner.data.Image }}"
+                        title="{{ partner.data.Name }}" />
+                    <p class="carousel-text">{{ partner.data.Description }}</p>
+                </div>
+
+                {% endif %}
+                {% endfor %}
+
+                {% comment %} <div class="caret-button" style="visibility:hidden;">
+                    <span class="sjs-carousel-button-next material-icons icon md">expand_more</span>
+                </div>
+
+
+                <div class="caret-button" style="visibility:hidden;">
+                    <span class="sjs-carousel-button-prev material-icons icon md">expand_less</span>
+                </div> {% endcomment %}
+
+            </div>
+
+        </div>
+    </div>
+        </div>
+        <div class="actions">
+    <a id="change" href="/#partner-recipe-builder">Change Recipe</a>
+</div>
+    </div>
+</section>
+
+<script id="sjs-carousel" defer type="module">
+    import { Carousel, LazySource } from './packages/es/index.js';
+
+    const hwCarousel = new Carousel();
+
+    const swCarousel = new Carousel();
+
+    hwCarousel.Mount('.hardware');
+
+    swCarousel.Mount('.software');
+
+    const lazySrcs = new LazySource();
+
+    lazySrcs.Mount('[data-src]');
+
+</script>
