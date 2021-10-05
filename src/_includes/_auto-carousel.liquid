@@ -1,0 +1,32 @@
+<!-- Carousel used in index.liquid -->
+
+{% include _carousel.liquid %}
+
+<script id="sjs-carousel" defer type="module">
+    import { Carousel, LazySource } from './packages/es/index.js';
+
+    const hwCarousel = new Carousel();
+
+    const swCarousel = new Carousel();
+
+    hwCarousel.Mount('.hardware');
+    swCarousel.Mount('.software');
+
+    hwCarousel.SlideInterval(4000);
+    swCarousel.SlideInterval(7000);
+
+
+    const lazySrcs = new LazySource();
+
+    lazySrcs.Mount('[data-src]');
+
+    document.getElementById("carousel-action").onmouseover = function StopCarousel() {
+        hwCarousel.StopInterval();
+        swCarousel.StopInterval();
+    }
+
+    document.getElementById("carousel-action").onmouseleave = function StartCarousel() {
+        hwCarousel.SlideInterval(4000);
+        swCarousel.SlideInterval(7000);
+    }
+</script>

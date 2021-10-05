@@ -20,230 +20,155 @@ title: IoT Ensemble | Connect. Combine. Code.
                     </div>
                 </section>
 
-                <section class="partners">
+                <section class="call-to-action">
+                    <div class="video">
+                        <iframe
+                            width="100%"
+                            height="350"
+                            src="https://www.youtube.com/embed/hQaVqLzAmIM"
+                            title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                        ></iframe>
+                    </div>
+
+                    <div class="details">
+                        <h2>Get Started for Free</h2>
+
+                        <h3>Connect. Combine. Code.</h3>
+
+                        <div class="flex-filler"></div>
+
+                        <a href="/dashboard">Get started for free</a>
+                    </div>
+
+                    {% comment %} <!-- <landing-pages-info-cards-element>
+                        <div class="card-container">
+                            <landing-pages-info-card-element>
+                                <mat-card class="card mat-card">
+                                    <div class="icon">
+                                        <img
+                                            src="./assets/images/pngs/ai-robot-no-bg.png"
+                                            class=""
+                                        />
+                                    </div>
+
+                                    <div class="content">
+                                        <h3 class="title">Simple</h3>
+
+                                        <div class="info">
+                                            I operate as your virtual IoT
+                                            developer so you can focus on making
+                                            the world smarter. Connect custom
+                                            devices when you're ready.
+                                        </div>
+                                    </div>
+                                </mat-card>
+                            </landing-pages-info-card-element>
+                        </div>
+
+                        <div class="card-container">
+                            <landing-pages-info-card-element>
+                                <mat-card
+                                    class="card mat-card mat-focus-indicator"
+                                >
+                                    <div class="icon">
+                                        <img
+                                            src="./assets/images/pngs/15-minute-clock-no-bg.png"
+                                            class=""
+                                        />
+                                    </div>
+
+                                    <div class="content">
+                                        <h3 class="title">Powerful</h3>
+
+                                        <div class="info">
+                                            I radically reduce the time and work
+                                            involved in getting devices and data
+                                            delivered where its needed. Try it
+                                            with me for free.
+                                        </div>
+                                    </div>
+                                </mat-card>
+                            </landing-pages-info-card-element>
+                        </div>
+
+                        <div class="card-container">
+                            <landing-pages-info-card-element>
+                                <mat-card class="card mat-card">
+                                    <div class="icon">
+                                        <img
+                                            src="./assets/images/pngs/rocket-accelerate-no-bg.png"
+                                        />
+                                    </div>
+
+                                    <div class="content">
+                                        <h3 class="title">IoT Accelerated</h3>
+
+                                        <div class="info">
+                                            I automate best practice IoT
+                                            infrastructure out of the box.
+                                            Accelerate your adoption and usage
+                                            of IoT technologies. Start today.
+                                        </div>
+                                    </div>
+                                </mat-card>
+                            </landing-pages-info-card-element>
+                        </div>
+                    </landing-pages-info-cards-element> --> {% endcomment %}
+                </section>
+
+                <section class="partners" id="partner-recipe-builder">
                     <div class="container">
                         <h2>Recipes for Rapid IoT</h2>
 
                         <div class="recipe-action-container" id="carousel-action">
-                            <script></script>
 
-                        <div class="recipe-builder">
-                            <div class="partner-carousel-container" id="hardware-carousel-container">
-                                {% comment %} <!-- sjs-carousel-button-next --> {% endcomment %}
-                                
+                            {% include _auto-carousel.liquid %}
 
-                                <div id="hardware" class="hardware">
 
-                                  {% comment %} <!-- eleventy attempt --> {% endcomment %}
-                                  {% comment %} <div>{{collections.partners}}</div> {% endcomment %}
-                                {% for partner in collections.partners -%}
-                                {% if partner.data.Type == "Input" %}
 
-                                <div class="option sjs-carousel-item">
-                                    <img 
-                                        class="carousel-img"
-                                        id="{{ partner.data.Name }}"
-                                        src="{{ partner.data.Image }}"
-                                        title="{{ partner.data.Name }}"
-                                    />
-                                    <p class="carousel-text">{{ partner.data.Description }}</p>
-                                </div>
+                            {% comment %} <!-- begin -->
+                            <!-- <iframe 
+                                src="https://www.iot-ensemble.com/blog/blogs/2021/july/2021-07-03-mikroe-email-text-alerts" 
+                                frameborder="0"
+                                width="100%"
+                                height="500px">
+                            </iframe> -->
+                            <!-- end --> {% endcomment %}
 
-                                {% endif %}
-                                {% endfor -%}
-
-                                {% comment %} <!-- eleventy attempt --> {% endcomment %}
-                                    
-                            
-                                    {% comment %} <!-- 
-                                                                * Use a module or JS to build out a template - user defined
-                            
-                                                                * Four ways to setup a template - 
-                                                                * 1. Add HTML here
-                                                                * 2. Convert HTML to a string and add it to the innerHTML of a parent element
-                                                                * 3. Render it out using JS - CarouselTemplate.js is an example, can be external JS file too
-                                                                * 4. Export HTML file in module and display it - working on that 
-                                                                * (componenet/loaderTest/template.html) 
-                                                             --> {% endcomment %}
-                                    {% comment %} <!-- <script id="sjs-carousel" type="module">
-                                        import { ComponentTest } from './packages/es/index.js';
-                                        const componentTest = new ComponentTest();
-                                        const el =
-                                            document.getElementById('hardware');
-
-                                        el.innerHTML +=
-                                            componentTest.ComponentAsString();
-                                    </script>
-                            
-                                    <div class="option sjs-carousel-item">
-                                        <img class="carousel-img" src="./uploads/Sparkfun.png" />
-                                        <p class="carousel-text"> Sparkfun Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum enim fugit
-                                            assumenda doloremque quos animi dicta culpa nostrum neque!</p>
-                            
-                                    </div> --> {% endcomment %}
-
-                                    <div class="caret-button">
-                                        <span class="sjs-carousel-button-next material-icons icon md">expand_more</span>
-                                    </div>
-                            
-                                    <div class="caret-button">
-                                        <span class="sjs-carousel-button-prev material-icons icon md">expand_less</span>
-                                    </div>
-                                </div>
-                                
-
+                            <div class="actions">
+                                <a href="/dashboard">Get Started</a>
+                                <a id="learn-more-button" target="_blank">Learn More</a>
                             </div>
+                            <script>
+                            /**
+                            get the ids of the active partners currently displayed in order to display the correct page
+                            upon learn more being clicked.
+                            */
+                            document.getElementById("learn-more-button").onclick = function GetActivePartners(){
+                                let activeElements = document.getElementsByClassName("active");
+                                console.log("active Elements = ", activeElements);
+                                let href = "";
 
-                            
+                                for(let i=0; i<activeElements.length; i++){
+                                    let item = activeElements[i];
+                                    console.log(item.id);
+                                    if(i === 0){
+                                        href+=item.id;
+                                        href+="-";
+                                    }
+                                    else{
+                                    href+=item.id;
+                                    }
+                                }
+                                console.log("href = ", href);
 
-                            <div class="partner-carousel-container" id="fathym-carousel-container">
-                                <div class="arrow-hw arrow">
-                                    <span class="material-icons arrow-icon">arrow_forward</span>
-                                </div>
-                                <div class="arrow-sw arrow">
-                                    <span class="material-icons arrow-icon">arrow_forward</span>
-                                </div>
-                                <div class="thinky">
-                                    <img class="thinky-icon carousel-img" src="./static/images/Fathym-logo2-black.png" src="Fathym" />
-                                    <p class="carousel-text"> Fathym Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum enim fugit
-                                        assumenda doloremque quos animi dicta culpa nostrum neque!</p>
-                            
-                                </div>
-                                
-                            </div>
-
-                            
-
-                            <div class="partner-carousel-container" id="software-carousel-container">
-
-                            <div id="software" class="software">
-                                {% comment %} <!-- eleventy attempt --> {% endcomment %}
-                                {% for partner in collections.partners %}
-                                    {% if partner.data.Type == "Output" %}
-
-                                    <div class="option sjs-carousel-item">
-                                        <img 
-                                            class="carousel-img"
-                                            id="{{ partner.data.Name }}"
-                                            src="{{ partner.data.Image }}"
-                                            title="{{ partner.data.Name }}"
-                                        />
-                                        <p class="carousel-text">{{ partner.data.Description }}</p>
-                                    </div>
-
-                                    {% endif %}
-                                {% endfor %}
-
-                                {% comment %} <!-- eleventy attempt --> {% endcomment %}
-
-                                
-
-
-                                {% comment %} <!--<div class="option sjs-carousel-item">
-                                    <img 
-                                        class="carousel-img"
-                                        id="D3js"
-                                        src="./static/images/third-party/logos/D3js.png"
-                                        title="D3js"
-                                    />
-                                    <p class="carousel-text"> D3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum enim fugit assumenda doloremque quos animi dicta culpa nostrum neque!</p>
-                                </div>
-
-                                <div class="option sjs-carousel-item">
-                                    <img
-                                    class="carousel-img"
-                                        id="Grafana"
-                                        src="./static/images/third-party/logos/Grafana.png"
-                                        title="Grafana"
-                                    />
-                                    <p class="carousel-text">Grafana Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum enim fugit assumenda doloremque quos animi dicta culpa nostrum neque!</p>
-
-                                </div>
-
-                                <div class="option sjs-carousel-item">
-                                    <img
-                                    class="carousel-img"
-                                        id="IFTTT"
-                                        src="./static/images/third-party/logos/IFTTT.png"
-                                        title="IFTTT"
-                                    />
-                                    <p class="carousel-text"> IFTTT Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum enim fugit assumenda doloremque quos animi dicta culpa nostrum neque!</p>
-
-                                </div>
-
-                                <div class="option sjs-carousel-item">
-                                    <img
-                                    class="carousel-img"
-                                        id="MSsql"
-                                        src="./static/images/third-party/logos/MSsql.png"
-                                        title="Microsoft SQL"
-                                    />
-                                    <p class="carousel-text">MSsql Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum enim fugit assumenda doloremque quos animi dicta culpa nostrum neque!</p>
-
-                                </div>
-
-                                <div class="option sjs-carousel-item">
-                                    <img
-                                    class="carousel-img"
-                                        id="Powerbi"
-                                        src="./static/images/third-party/logos/Powerbi.png"
-                                        title="Powerbi"
-                                    />
-                                    <p class="carousel-text">PowerBi Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum enim fugit assumenda doloremque quos animi dicta culpa nostrum neque!</p>
-
-                                </div>
-
-                                <div class="option sjs-carousel-item">
-                                    <img
-                                    class="carousel-img"
-                                        id="Tableau"
-                                        src="./static/images/third-party/logos/Tableau.png"
-                                        title="Tableau"
-                                    />
-                                    <p class="carousel-text"> Tableau Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum enim fugit assumenda doloremque quos animi dicta culpa nostrum neque!</p>
-
-                                </div>
-
-                                <div class="option sjs-carousel-item">
-                                    <img
-                                    class="carousel-img"
-                                        id="Zapier"
-                                        src="./static/images/third-party/logos/Zapier.png"
-                                        title="Zapier"
-                                    />
-                                    <p class="carousel-text">Zapier Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum enim fugit assumenda doloremque quos animi dicta culpa nostrum neque!</p>
-
-                                </div> --> {% endcomment %}
-
-                                <div class="caret-button">
-                                    <span class="sjs-carousel-button-next material-icons icon md">expand_more</span>
-                                </div>
-
-                                
-                                <div class="caret-button">
-                                    <span class="sjs-carousel-button-prev material-icons icon md">expand_less</span>
-                                </div>
-
-                            </div>
-
+                                document.getElementById("learn-more-button").href=href;
+                            }
+                            </script>
                         </div>
-                        </div>
-
-                        {% comment %} <!-- begin -->
-                        <!-- <iframe 
-                            src="https://www.iot-ensemble.com/blog/blogs/2021/july/2021-07-03-mikroe-email-text-alerts" 
-                            frameborder="0"
-                            width="100%"
-                            height="500px">
-                        </iframe> -->
-                        <!-- end --> {% endcomment %}
-
-                        <div class="actions">
-                            <a href="/dashboard">Get Started</a>
-
-                            <a href="/blog">Learn More</a>
-                        </div>
-                    </div>
                     </div>
                 </section>
 
@@ -402,104 +327,7 @@ title: IoT Ensemble | Connect. Combine. Code.
                     </div>
                 </section>
 
-                <section class="call-to-action">
-                    <div class="video">
-                        <iframe
-                            width="100%"
-                            height="350"
-                            src="https://www.youtube.com/embed/hQaVqLzAmIM"
-                            title="YouTube video player"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen
-                        ></iframe>
-                    </div>
-
-                    <div class="details">
-                        <h2>Get Started for Free</h2>
-
-                        <h3>Connect. Combine. Code.</h3>
-
-                        <div class="flex-filler"></div>
-
-                        <a href="/dashboard">Get started for free</a>
-                    </div>
-
-                    {% comment %} <!-- <landing-pages-info-cards-element>
-                        <div class="card-container">
-                            <landing-pages-info-card-element>
-                                <mat-card class="card mat-card">
-                                    <div class="icon">
-                                        <img
-                                            src="./assets/images/pngs/ai-robot-no-bg.png"
-                                            class=""
-                                        />
-                                    </div>
-
-                                    <div class="content">
-                                        <h3 class="title">Simple</h3>
-
-                                        <div class="info">
-                                            I operate as your virtual IoT
-                                            developer so you can focus on making
-                                            the world smarter. Connect custom
-                                            devices when you're ready.
-                                        </div>
-                                    </div>
-                                </mat-card>
-                            </landing-pages-info-card-element>
-                        </div>
-
-                        <div class="card-container">
-                            <landing-pages-info-card-element>
-                                <mat-card
-                                    class="card mat-card mat-focus-indicator"
-                                >
-                                    <div class="icon">
-                                        <img
-                                            src="./assets/images/pngs/15-minute-clock-no-bg.png"
-                                            class=""
-                                        />
-                                    </div>
-
-                                    <div class="content">
-                                        <h3 class="title">Powerful</h3>
-
-                                        <div class="info">
-                                            I radically reduce the time and work
-                                            involved in getting devices and data
-                                            delivered where its needed. Try it
-                                            with me for free.
-                                        </div>
-                                    </div>
-                                </mat-card>
-                            </landing-pages-info-card-element>
-                        </div>
-
-                        <div class="card-container">
-                            <landing-pages-info-card-element>
-                                <mat-card class="card mat-card">
-                                    <div class="icon">
-                                        <img
-                                            src="./assets/images/pngs/rocket-accelerate-no-bg.png"
-                                        />
-                                    </div>
-
-                                    <div class="content">
-                                        <h3 class="title">IoT Accelerated</h3>
-
-                                        <div class="info">
-                                            I automate best practice IoT
-                                            infrastructure out of the box.
-                                            Accelerate your adoption and usage
-                                            of IoT technologies. Start today.
-                                        </div>
-                                    </div>
-                                </mat-card>
-                            </landing-pages-info-card-element>
-                        </div>
-                    </landing-pages-info-cards-element> --> {% endcomment %}
-                </section>
+                
             </div>
         
 
@@ -558,34 +386,3 @@ title: IoT Ensemble | Connect. Combine. Code.
           </div>
         </div>
       </footer>
-    {% comment %} <!-- </div> --> {% endcomment %}
-
-    {% comment %} <!-- Carousel --> {% endcomment %}
-    <script id="sjs-carousel" defer type="module">
-      import { Carousel, LazySource } from './packages/es/index.js';
-
-      const hwCarousel = new Carousel();
-      const swCarousel = new Carousel();
-
-
-      hwCarousel.Mount('.hardware');
-      swCarousel.Mount('.software');
-
-      hwCarousel.SlideInterval(4000);
-      swCarousel.SlideInterval(7000);
-
-
-      const lazySrcs = new LazySource();
-
-      lazySrcs.Mount('[data-src]');
-
-      document.getElementById("carousel-action").onmouseover = function StopCarousel() {
-        hwCarousel.StopInterval();
-        swCarousel.StopInterval();
-    }
-
-    document.getElementById("carousel-action").onmouseleave = function StartCarousel() {
-        hwCarousel.SlideInterval(4000);
-        swCarousel.SlideInterval(7000);
-    }
-    </script>
