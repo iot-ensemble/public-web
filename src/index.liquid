@@ -565,19 +565,18 @@ title: IoT Ensemble | Connect. Combine. Code.
       import { Carousel, LazySource } from './packages/es/index.js';
 
       const hwCarousel = new Carousel();
-
-      hwCarousel.Mount('.hardware');
-
       const swCarousel = new Carousel();
 
-            hwCarousel.Mount('.hardware');
-            hwCarousel.SlideInterval(4000);
+
+      hwCarousel.Mount('.hardware');
       swCarousel.Mount('.software');
+
+      hwCarousel.SlideInterval(4000);
+      swCarousel.SlideInterval(7000);
+
 
       const lazySrcs = new LazySource();
 
-            swCarousel.Mount('.software');
-            swCarousel.SlideInterval(7000);
       lazySrcs.Mount('[data-src]');
 
       document.getElementById("carousel-action").onmouseover = function StopCarousel() {
