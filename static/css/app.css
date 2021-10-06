@@ -267,12 +267,12 @@ footer {
 }
 .footer-container{
     width: 80%;
-    height:200px;
 }
 
 .footer-main-content{
     display: flex;
     justify-content: space-around;
+    align-items: center;
     margin-top: 25px;
 }
 
@@ -298,7 +298,7 @@ footer {
 }
 
 .ms-gold{
-    width:180px;
+    width:70%;
 }
 
 .copyright{
@@ -465,6 +465,15 @@ footer {
         height: 36px;
         font-size: 36px;
     }
+
+    .footer-main-content{
+        display: unset;
+    }
+
+    .footer-links-container{
+        
+        width: 100%;
+        padding-bottom:20px;
 }
 
 @media (max-width: 376px) {
