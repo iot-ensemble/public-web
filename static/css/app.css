@@ -184,6 +184,10 @@ header nav .trigger {
     padding: calc(var(--margin-step) / 2) calc(var(--margin-step) * 2);
 }
 
+#learn-more-button{
+    cursor: pointer;
+}
+
 .memo {
     color: var(--theme-black);
     font-family: 'Black Ops One', cursive;
@@ -474,6 +478,11 @@ footer {
         
         width: 100%;
         padding-bottom:20px;
+    }
+
+    .ms-gold{
+        width:40%;
+    }
 }
 
 @media (max-width: 376px) {
