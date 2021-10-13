@@ -1,10 +1,10 @@
 ---
-Name: Mikroe-D3js
-Description: Mikroe-d3 description
-Hardware: Mikroe
-Software: D3js
-HardwardImage: "/uploads/MicroeLong.png"
-SoftwareImage: "/uploads/D3js.png"
+Name: Raspberry-Pi-Grafana
+Description: Raspberry-Pi-Grafana Description
+Hardware: Raspberry-Pi
+Software: Grafana
+HardwardImage: "/uploads/Raspberry-Pi.png"
+SoftwareImage: "/uploads/Grafana.png"
 title: raspberry-pi-grafana
 
 ---
