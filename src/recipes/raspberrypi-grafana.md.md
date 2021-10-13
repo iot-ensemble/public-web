@@ -1,6 +1,6 @@
 ---
-Name: RaspberryPi-Grafana
-Description: RaspberryPi-Grafana description
+Name: Raspberry-Pi-Grafana
+Description: Raspberry-Pi-Grafana description
 Hardware: Raspberry-Pi
 Software: Grafana
 HardwardImage: "/uploads/Raspberry-Pi.png"
