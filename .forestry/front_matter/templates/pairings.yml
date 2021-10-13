@@ -20,5 +20,3 @@ fields:
     required: false
   label: Description
   description: Description
-pages:
-- src/recipes/RaspberryPi-Grafana.md
