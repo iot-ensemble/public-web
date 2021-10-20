@@ -50,7 +50,7 @@ title: IoT Ensemble | Connect. Combine. Code.
                             get the ids of the active partners currently displayed in order to display the correct page
                             upon learn more being clicked.
                             */
-                            document.getElementById("learn-more-button").onclick = function GetActivePartners(){
+                            document.getElementById("learn-more-button").onmouseover = function GetActivePartners(){
                                 let activeElements = document.getElementsByClassName("active");
                                 console.log("active Elements = ", activeElements);
                                 let href = "";
