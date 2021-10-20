@@ -20,6 +20,105 @@ title: IoT Ensemble | Connect. Combine. Code.
                     </div>
                 </section>
 
+                <section class="call-to-action">
+                    <div class="video">
+                        <iframe
+                            width="100%"
+                            height="350"
+                            src="https://www.youtube.com/embed/hQaVqLzAmIM"
+                            title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                        ></iframe>
+                    </div>
+
+                    <div class="details">
+                        <h2>Get Started for Free</h2>
+
+                        <h3>Connect. Combine. Code.</h3>
+
+                        <div class="flex-filler"></div>
+
+                        <a href="/dashboard">Get started for free</a>
+                    </div>
+
+                    {% comment %} <!-- <landing-pages-info-cards-element>
+                        <div class="card-container">
+                            <landing-pages-info-card-element>
+                                <mat-card class="card mat-card">
+                                    <div class="icon">
+                                        <img
+                                            src="./assets/images/pngs/ai-robot-no-bg.png"
+                                            class=""
+                                        />
+                                    </div>
+
+                                    <div class="content">
+                                        <h3 class="title">Simple</h3>
+
+                                        <div class="info">
+                                            I operate as your virtual IoT
+                                            developer so you can focus on making
+                                            the world smarter. Connect custom
+                                            devices when you're ready.
+                                        </div>
+                                    </div>
+                                </mat-card>
+                            </landing-pages-info-card-element>
+                        </div>
+
+                        <div class="card-container">
+                            <landing-pages-info-card-element>
+                                <mat-card
+                                    class="card mat-card mat-focus-indicator"
+                                >
+                                    <div class="icon">
+                                        <img
+                                            src="./assets/images/pngs/15-minute-clock-no-bg.png"
+                                            class=""
+                                        />
+                                    </div>
+
+                                    <div class="content">
+                                        <h3 class="title">Powerful</h3>
+
+                                        <div class="info">
+                                            I radically reduce the time and work
+                                            involved in getting devices and data
+                                            delivered where its needed. Try it
+                                            with me for free.
+                                        </div>
+                                    </div>
+                                </mat-card>
+                            </landing-pages-info-card-element>
+                        </div>
+
+                        <div class="card-container">
+                            <landing-pages-info-card-element>
+                                <mat-card class="card mat-card">
+                                    <div class="icon">
+                                        <img
+                                            src="./assets/images/pngs/rocket-accelerate-no-bg.png"
+                                        />
+                                    </div>
+
+                                    <div class="content">
+                                        <h3 class="title">IoT Accelerated</h3>
+
+                                        <div class="info">
+                                            I automate best practice IoT
+                                            infrastructure out of the box.
+                                            Accelerate your adoption and usage
+                                            of IoT technologies. Start today.
+                                        </div>
+                                    </div>
+                                </mat-card>
+                            </landing-pages-info-card-element>
+                        </div>
+                    </landing-pages-info-cards-element> --> {% endcomment %}
+                </section>
+
                 
 
                 <section class="partners" id="partner-recipe-builder">
@@ -29,8 +128,6 @@ title: IoT Ensemble | Connect. Combine. Code.
                         <div class="recipe-action-container" id="carousel-action">
 
                             {% include _auto-carousel.liquid %}
-
-
 
                             {% comment %} <!-- begin -->
                             <!-- <iframe 
@@ -50,7 +147,7 @@ title: IoT Ensemble | Connect. Combine. Code.
                             get the ids of the active partners currently displayed in order to display the correct page
                             upon learn more being clicked.
                             */
-                            document.getElementById("learn-more-button").onclick = function GetActivePartners(){
+                            document.getElementById("learn-more-button").onmouseover = function GetActivePartners(){
                                 let activeElements = document.getElementsByClassName("active");
                                 console.log("active Elements = ", activeElements);
                                 let href = "";
@@ -75,7 +172,7 @@ title: IoT Ensemble | Connect. Combine. Code.
                     </div>
                 </section>
 
-                <section class="memo">
+                {% comment %} <section class="memo">
                     <div class="container">
                         <div class="paper">
                             <h2>RE: IoT Initiatives Report: CA-483792-ZT</h2>
@@ -184,9 +281,9 @@ title: IoT Ensemble | Connect. Combine. Code.
                             </h3>
                         </div>
                     </div>
-                </section>
+                </section> {% endcomment %}
 
-                <section class="outgrown">
+                {% comment %} <section class="outgrown">
                     <div class="spread">
                         <h2>Outgrown yet another SaaS solution?</h2>
 
@@ -203,8 +300,8 @@ title: IoT Ensemble | Connect. Combine. Code.
                             />
                         </div>
                     </div>
-                </section>
-
+                </section> {% endcomment %}
+{% comment %} 
                 <section class="device-to-solution">
                     <div class="spread">
                         <h2>Device-to-Solution</h2>
@@ -222,7 +319,7 @@ title: IoT Ensemble | Connect. Combine. Code.
                             />
                         </div>
                     </div>
-                </section>
+                </section> {% endcomment %}
 
                 <section class="partnerverse">
                     <div class="spread">
@@ -230,104 +327,7 @@ title: IoT Ensemble | Connect. Combine. Code.
                     </div>
                 </section>
 
-                <section class="call-to-action">
-                    <div class="video">
-                        <iframe
-                            width="100%"
-                            height="350"
-                            src="https://www.youtube.com/embed/hQaVqLzAmIM"
-                            title="YouTube video player"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen
-                        ></iframe>
-                    </div>
-
-                    <div class="details">
-                        <h2>Get Started for Free</h2>
-
-                        <h3>Connect. Combine. Code.</h3>
-
-                        <div class="flex-filler"></div>
-
-                        <a href="/dashboard">Get started for free</a>
-                    </div>
-
-                    {% comment %} <!-- <landing-pages-info-cards-element>
-                        <div class="card-container">
-                            <landing-pages-info-card-element>
-                                <mat-card class="card mat-card">
-                                    <div class="icon">
-                                        <img
-                                            src="./assets/images/pngs/ai-robot-no-bg.png"
-                                            class=""
-                                        />
-                                    </div>
-
-                                    <div class="content">
-                                        <h3 class="title">Simple</h3>
-
-                                        <div class="info">
-                                            I operate as your virtual IoT
-                                            developer so you can focus on making
-                                            the world smarter. Connect custom
-                                            devices when you're ready.
-                                        </div>
-                                    </div>
-                                </mat-card>
-                            </landing-pages-info-card-element>
-                        </div>
-
-                        <div class="card-container">
-                            <landing-pages-info-card-element>
-                                <mat-card
-                                    class="card mat-card mat-focus-indicator"
-                                >
-                                    <div class="icon">
-                                        <img
-                                            src="./assets/images/pngs/15-minute-clock-no-bg.png"
-                                            class=""
-                                        />
-                                    </div>
-
-                                    <div class="content">
-                                        <h3 class="title">Powerful</h3>
-
-                                        <div class="info">
-                                            I radically reduce the time and work
-                                            involved in getting devices and data
-                                            delivered where its needed. Try it
-                                            with me for free.
-                                        </div>
-                                    </div>
-                                </mat-card>
-                            </landing-pages-info-card-element>
-                        </div>
-
-                        <div class="card-container">
-                            <landing-pages-info-card-element>
-                                <mat-card class="card mat-card">
-                                    <div class="icon">
-                                        <img
-                                            src="./assets/images/pngs/rocket-accelerate-no-bg.png"
-                                        />
-                                    </div>
-
-                                    <div class="content">
-                                        <h3 class="title">IoT Accelerated</h3>
-
-                                        <div class="info">
-                                            I automate best practice IoT
-                                            infrastructure out of the box.
-                                            Accelerate your adoption and usage
-                                            of IoT technologies. Start today.
-                                        </div>
-                                    </div>
-                                </mat-card>
-                            </landing-pages-info-card-element>
-                        </div>
-                    </landing-pages-info-cards-element> --> {% endcomment %}
-                </section>
+                
 
                 
             </div>
