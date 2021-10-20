@@ -1,6 +1,6 @@
 ---
 Name: Mikroe-D3js
-Description: Mikroe-d3 description
+Description: ''
 Hardware: Mikroe
 Software: D3js
 HardwardImage: "/uploads/MicroeLong.png"
