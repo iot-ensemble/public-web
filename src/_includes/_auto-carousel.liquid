@@ -1,6 +1,123 @@
 <!-- Carousel used in index.liquid -->
 
-{% include _carousel.liquid %}
+
+    <div class="recipe-builder">
+        <div class="partner-carousel-container" id="hardware-carousel-container">
+            {% comment %}
+            <!-- sjs-carousel-button-next --> {% endcomment %}
+
+
+            <div id="hardware" class="hardware">
+
+                {% comment %} eleventy {% endcomment %}
+                {% for partner in collections.partners -%}
+                {% if partner.data.Type == "Input" %}
+
+                <div class="option sjs-carousel-item" id="{{ partner.data.Name }}">
+                    <img class="carousel-img" id="{{ partner.data.Name }}-image" src="{{ partner.data.Image }}"
+                        title="{{ partner.data.Name }}" />
+                    <p class="carousel-text">{{ partner.data.Description }}</p>
+                </div>
+
+                {% endif %}
+                {% endfor -%}
+
+                {% comment %} eleventy attempt {% endcomment %}
+
+
+                {% comment %}
+                <!-- 
+                                                                    * Use a module or JS to build out a template - user defined
+                                
+                                                                    * Four ways to setup a template - 
+                                                                    * 1. Add HTML here
+                                                                    * 2. Convert HTML to a string and add it to the innerHTML of a parent element
+                                                                    * 3. Render it out using JS - CarouselTemplate.js is an example, can be external JS file too
+                                                                    * 4. Export HTML file in module and display it - working on that 
+                                                                    * (componenet/loaderTest/template.html) 
+                                                                --> {% endcomment %}
+                {% comment %}
+                <!-- <script id="sjs-carousel" type="module">
+                                            import { ComponentTest } from './packages/es/index.js';
+                                            const componentTest = new ComponentTest();
+                                            const el =
+                                                document.getElementById('hardware');
+
+                                            el.innerHTML +=
+                                                componentTest.ComponentAsString();
+                                        </script>
+                                
+                                        <div class="option sjs-carousel-item">
+                                            <img class="carousel-img" src="./uploads/Sparkfun.png" />
+                                            <p class="carousel-text"> Sparkfun Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum enim fugit
+                                                assumenda doloremque quos animi dicta culpa nostrum neque!</p>
+                                
+                                        </div> --> {% endcomment %}
+
+                <div class="caret-button">
+                    <span class="sjs-carousel-button-next material-icons icon md">expand_more</span>
+                </div>
+
+                <div class="caret-button">
+                    <span class="sjs-carousel-button-prev material-icons icon md">expand_less</span>
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+        <div class="partner-carousel-container" id="fathym-carousel-container">
+            <div class="arrow-hw arrow">
+                <span class="material-icons arrow-icon">arrow_forward</span>
+            </div>
+            <div class="arrow-sw arrow">
+                <span class="material-icons arrow-icon">arrow_forward</span>
+            </div>
+            {% for partner in collections.partners %}
+            {% if partner.data.Type == "Platform" %}
+            <div class="thinky">
+                <img class="thinky-icon carousel-img" id="{{ partner.data.Name }}-image" title="{{ partner.data.Name }}"
+                    src="{{ partner.data.Image }}" />
+
+                <p class="carousel-text">{{ partner.data.Description }}</p>
+            </div>
+            {% endif %}
+            {% endfor %}
+
+        </div>
+
+
+
+        <div class="partner-carousel-container" id="software-carousel-container">
+
+            <div id="software" class="software">
+                {% for partner in collections.partners %}
+                {% if partner.data.Type == "Output" %}
+
+                <div class="option sjs-carousel-item" id="{{ partner.data.Name }}">
+                    <img class="carousel-img" id="{{ partner.data.Name }}-image" src="{{ partner.data.Image }}"
+                        title="{{ partner.data.Name }}" />
+                    <p class="carousel-text">{{ partner.data.Description }}</p>
+                </div>
+
+                {% endif %}
+                {% endfor %}
+
+                <div class="caret-button">
+                    <span class="sjs-carousel-button-next material-icons icon md">expand_more</span>
+                </div>
+
+
+                <div class="caret-button">
+                    <span class="sjs-carousel-button-prev material-icons icon md">expand_less</span>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
 
 <script id="sjs-carousel" defer type="module">
     import { Carousel, LazySource } from './packages/es/index.js';
