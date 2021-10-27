@@ -59,7 +59,19 @@ title: IoT Ensemble | Connect. Combine. Code.
                                 <a href="/dashboard">Get Started</a>
                                 <a id="learn-more-button" target="_blank">Learn More</a>
                             </div>
-                            <script>
+
+                            {% assign urls = collections.Recipes.data | json %}
+
+                            <script type="module">
+
+                            import { Recipes } from './packages/es/index.js'
+
+                            const currentRecipe = new Recipes();
+
+                            var rec = "{{ urls | json }}";
+
+                            console.log("recipes = ", rec );
+
                             /**
                             get the ids of the active partners currently displayed in order to display the correct page
                             upon learn more being clicked.
@@ -81,8 +93,23 @@ title: IoT Ensemble | Connect. Combine. Code.
                                 }
                                 console.log("href = ", href);
 
-                                document.getElementById("learn-more-button").href=href;
+                                let link = currentRecipe.GetURL(href);
+
+                                if(link === null){
+                                    //document.getElementById("learn-more-button").href="#";    
+                                    document.getElementById("learn-more-button").disabled = true;                            
+
+                                }
+                                else{
+                                    document.getElementById("learn-more-button").disabled = false;
+                                    document.getElementById("learn-more-button").href=link;                                
+
+                                }
+
+                                console.log("link = ", link);
+
                             }
+                            
                             </script>
                         </div>
                     </div>

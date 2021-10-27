@@ -5,6 +5,7 @@ import { Carousel } from './controls/Carousel.js';
 import { CarouselTemplate } from './templates/CarouselTemplate.js';
 import { ComponentTest } from './components/loaderTest/component.js';
 import { LazySource } from './controls/LazySource.js';
+import { Recipes } from './controls/Recipes.js';
 
 export {
   PublicWebApplication,
@@ -14,4 +15,5 @@ export {
   CarouselTemplate,
   ComponentTest,
   LazySource,
+  Recipes
 };
