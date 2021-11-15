@@ -174,7 +174,7 @@ header nav .trigger {
     text-align: center;
 }
 
-.partners .container .actions a {
+.partners .container .actions button {
     margin: var(--margin-step);
     box-shadow: var(--box-shadow);
     background-color: var(--theme-accent);
@@ -182,10 +182,28 @@ header nav .trigger {
     font-weight: bold;
     text-decoration: none;
     padding: calc(var(--margin-step) / 2) calc(var(--margin-step) * 2);
+    border: none;
+    border-radius: 2px;
+}
+
+.partners .container .actions a{
+    text-decoration: none;
+    color: var(--theme-black);
+    font-weight: bold;
 }
 
 #learn-more-button{
     cursor: pointer;
+}
+
+
+/* .partners .container .actions button #learn-more-button .disabled{
+    background-color: lightgrey !important;
+} */
+
+.disabled-button{
+    background-color: lightgrey !important;
+
 }
 
 .memo {

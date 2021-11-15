@@ -56,8 +56,13 @@ title: IoT Ensemble | Connect. Combine. Code.
                             {% include _auto-carousel.liquid %}
 
                             <div class="actions">
-                                <a href="/dashboard">Get Started</a>
-                                <a id="learn-more-button" target="_blank">Learn More</a>
+                                <button mat-button>
+                                    <a href="/dashboard">Get Started</a>
+                                </button>
+                                <button mat-button id="learn-more-button">
+                                Learn More
+                                    {% comment %} <a id="learn-more-link" target="_blank">Learn More</a> {% endcomment %}
+                                </button>
                             </div>
 
                             {% assign urls = collections.Recipes.data | json %}
@@ -76,9 +81,14 @@ title: IoT Ensemble | Connect. Combine. Code.
                             get the ids of the active partners currently displayed in order to display the correct page
                             upon learn more being clicked.
                             */
-                            document.getElementById("learn-more-button").onmouseover = function GetActivePartners(){
+
+                            
+                            let link = '';
+                            //test
+                            setInterval(function GetActivePartners(){
                                 let activeElements = document.getElementsByClassName("active");
                                 console.log("active Elements = ", activeElements);
+
                                 let href = "";
 
                                 for(let i=0; i<activeElements.length; i++){
@@ -93,23 +103,31 @@ title: IoT Ensemble | Connect. Combine. Code.
                                 }
                                 console.log("href = ", href);
 
-                                let link = currentRecipe.GetURL(href);
+                                link = currentRecipe.GetURL(href);
 
                                 if(link === null){
-                                    //document.getElementById("learn-more-button").href="#";    
-                                    document.getElementById("learn-more-button").disabled = true;                            
+                                    document.getElementById("learn-more-button").classList.add('disabled-button');                            
 
                                 }
                                 else{
-                                    document.getElementById("learn-more-button").disabled = false;
-                                    document.getElementById("learn-more-button").href=link;                                
+                                    document.getElementById("learn-more-button").classList.remove('disabled-button');                                                          
 
                                 }
 
                                 console.log("link = ", link);
+ 
+                            //code goes here that will be run every .5 seconds.    
+                            }, 500);
 
-                            }
-                            
+                            document.getElementById('learn-more-button').onclick = function ClickLink(){
+
+                                if(link !== null){
+
+                                    window.open(link);
+                                  
+                                }
+                                
+                            }                            
                             </script>
                         </div>
                     </div>
