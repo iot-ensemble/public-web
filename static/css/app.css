@@ -115,6 +115,7 @@ header nav .trigger {
             rgba(17, 17, 17) 95%
         ),
         url('../images/waves-low-res.jpg');
+    overflow-y: hidden;    
 }
 
 .partners .container {
