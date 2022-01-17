@@ -2,13 +2,13 @@ name: NPM Deploy
 
 on:
   push:
-    branches: [main,infrastructure,feature/**,hotfix/**]
+    branches: [main]
   pull_request:
-    branches: [main,infrastructure,feature/**,hotfix/**]
+    branches: [main]
 
 env:
-  Branches: main,infrastructure,feature/**,hotfix/**
-  MainBranch: main
+  Branches: main
+  MainBranch: 
   NPMRegistry: https://registry.npmjs.org/
   InstallCommand: npm ci
   DeployCommand: npm run deploy
@@ -92,3 +92,11 @@ jobs:
         run: ${{ env.DeployCommand }}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      # webhook to LowCodeUnit
+      - name: Invoke deployment hook
+        uses: fathym/workflow-webhook@v2
+        env:
+          webhook_url: ${{ secrets.LCU_WEBHOOK_URL }}
+          webhook_secret: ${{ secrets.LCU_WEBHOOK_SECRET }}
+          data: '{ "EnterpriseLookup": "${{ secrets.LCU_ENTERPRISE_LOOKUP }}", "Username": "${{ secrets.LCU_USERNAME }}" }'
