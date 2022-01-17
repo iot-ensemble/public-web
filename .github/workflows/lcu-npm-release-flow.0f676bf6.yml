@@ -2,13 +2,13 @@ name: NPM Deploy
 
 on:
   push:
-    branches: [main,infrastructure,feature/**,hotfix/**]
+    branches: [main]
   pull_request:
-    branches: [main,infrastructure,feature/**,hotfix/**]
+    branches: [main]
 
 env:
-  Branches: main,infrastructure,feature/**,hotfix/**
-  MainBranch: main
+  Branches: main
+  MainBranch: 
   NPMRegistry: https://registry.npmjs.org/
   InstallCommand: npm ci
   DeployCommand: npm run deploy
