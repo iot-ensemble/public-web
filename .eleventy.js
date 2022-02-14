@@ -10,6 +10,7 @@ module.exports = (config) => {
   
     //  Change the default folder used by 11ty from root to src
     return {
+  pathPrefix: './',
       dir: {
         input: 'src',
       },
