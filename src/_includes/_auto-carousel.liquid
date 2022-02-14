@@ -14,7 +14,7 @@
                 {% if partner.data.Type == "Input" %}
 
                 <div class="option sjs-carousel-item" id="{{ partner.data.Name }}">
-                    <img class="carousel-img" id="{{ partner.data.Name }}-image" src="{{ partner.data.Image }}"
+                    <img class="carousel-img" id="{{ partner.data.Name }}-image" src=".{{ partner.data.Image }}"
                         title="{{ partner.data.Name }}" />
                     <p class="carousel-text">{{ partner.data.Description }}</p>
                 </div>
@@ -79,7 +79,7 @@
             {% if partner.data.Type == "Platform" %}
             <div class="thinky">
                 <img class="thinky-icon carousel-img" id="{{ partner.data.Name }}-image" title="{{ partner.data.Name }}"
-                    src="{{ partner.data.Image }}" />
+                    src=".{{ partner.data.Image }}" />
 
                 <p class="carousel-text">{{ partner.data.Description }}</p>
             </div>
@@ -97,7 +97,7 @@
                 {% if partner.data.Type == "Output" %}
 
                 <div class="option sjs-carousel-item" id="{{ partner.data.Name }}">
-                    <img class="carousel-img" id="{{ partner.data.Name }}-image" src="{{ partner.data.Image }}"
+                    <img class="carousel-img" id="{{ partner.data.Name }}-image" src=".{{ partner.data.Image }}"
                         title="{{ partner.data.Name }}" />
                     <p class="carousel-text">{{ partner.data.Description }}</p>
                 </div>
