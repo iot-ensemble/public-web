@@ -1,0 +1,17 @@
+name: NPM - Release
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+env:
+  Branches: main
+  MainBranch: main
+  NPMRegistry: https://registry.npmjs.org/
+  InstallCommand: npm ci
+  DeployCommand: npm run deploy
+  Organization: iot-ensemble
+  Repository: public-web
+  Output: 
